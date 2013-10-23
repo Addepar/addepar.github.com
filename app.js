@@ -4062,10 +4062,10 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
       if (!(objectTypes[typeof object])) return result;
 
         for (index in iterable) {
-          if (hasOwnProperty.call(iterable, index)) {    
-          result.push(index);    
+          if (hasOwnProperty.call(iterable, index)) {
+          result.push(index);
           }
-        }    
+        }
       return result
     };
 
@@ -4160,7 +4160,7 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
           result[index] = callback ? callback(result[index], iterable[index]) : iterable[index]
         }
       }
-      else {    
+      else {
         var ownIndex = -1,
             ownProps = objectTypes[typeof iterable] ? keys(iterable) : [],
             length = ownProps.length;
@@ -4168,7 +4168,7 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
         while (++ownIndex < length) {
           index = ownProps[ownIndex];
           result[index] = callback ? callback(result[index], iterable[index]) : iterable[index]
-        }    
+        }
       }
         }
       };
@@ -4381,7 +4381,7 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
           if (typeof result[index] == 'undefined') result[index] = iterable[index]
         }
       }
-      else {    
+      else {
         var ownIndex = -1,
             ownProps = objectTypes[typeof iterable] ? keys(iterable) : [],
             length = ownProps.length;
@@ -4389,7 +4389,7 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
         while (++ownIndex < length) {
           index = ownProps[ownIndex];
           if (typeof result[index] == 'undefined') result[index] = iterable[index]
-        }    
+        }
       }
         }
       };
@@ -4464,8 +4464,8 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
       callback = callback && typeof thisArg == 'undefined' ? callback : lodash.createCallback(callback, thisArg);
 
         for (index in iterable) {
-          if (callback(iterable[index], index, collection) === false) return result;    
-        }    
+          if (callback(iterable[index], index, collection) === false) return result;
+        }
       return result
     };
 
@@ -4503,7 +4503,7 @@ Ember.AddeparMixins.StyleBindingsMixin = Ember.Mixin.create({
         while (++ownIndex < length) {
           index = ownProps[ownIndex];
           if (callback(iterable[index], index, collection) === false) return result
-        }    
+        }
       return result
     };
 
@@ -10370,7 +10370,7 @@ d3 = function() {
   d3.xhr = d3_xhrType(d3_identity);
   function d3_xhrType(response) {
     return function(url, mimeType, callback) {
-      if (arguments.length === 2 && typeof mimeType === "function") callback = mimeType, 
+      if (arguments.length === 2 && typeof mimeType === "function") callback = mimeType,
       mimeType = null;
       return d3_xhr(url, mimeType, response, callback);
     };
@@ -10881,7 +10881,7 @@ d3 = function() {
     var λ00, φ00, λ0, cosφ0, sinφ0;
     d3_geo_area.point = function(λ, φ) {
       d3_geo_area.point = nextPoint;
-      λ0 = (λ00 = λ) * d3_radians, cosφ0 = Math.cos(φ = (φ00 = φ) * d3_radians / 2 + π / 4), 
+      λ0 = (λ00 = λ) * d3_radians, cosφ0 = Math.cos(φ = (φ00 = φ) * d3_radians / 2 + π / 4),
       sinφ0 = Math.sin(φ);
     };
     function nextPoint(λ, φ) {
@@ -12747,7 +12747,7 @@ d3 = function() {
     return points.length < 4 ? d3_svg_lineLinear(points) : points[1] + d3_svg_lineHermite(points.slice(1, points.length - 1), d3_svg_lineCardinalTangents(points, tension));
   }
   function d3_svg_lineCardinalClosed(points, tension) {
-    return points.length < 3 ? d3_svg_lineLinear(points) : points[0] + d3_svg_lineHermite((points.push(points[0]), 
+    return points.length < 3 ? d3_svg_lineLinear(points) : points[0] + d3_svg_lineHermite((points.push(points[0]),
     points), d3_svg_lineCardinalTangents([ points[points.length - 2] ].concat(points, [ points[1] ]), tension));
   }
   function d3_svg_lineCardinal(points, tension) {
@@ -12909,7 +12909,7 @@ d3 = function() {
     function hull(data) {
       if (data.length < 3) return [];
       var fx = d3_functor(x), fy = d3_functor(y), n = data.length, vertices, plen = n - 1, points = [], stack = [], d, i, j, h = 0, x1, y1, x2, y2, u, v, a, sp;
-      if (fx === d3_svg_lineX && y === d3_svg_lineY) vertices = data; else for (i = 0, 
+      if (fx === d3_svg_lineX && y === d3_svg_lineY) vertices = data; else for (i = 0,
       vertices = []; i < n; ++i) {
         vertices.push([ +fx.call(this, d = data[i], i), +fy.call(this, d, i) ]);
       }
@@ -13079,7 +13079,7 @@ d3 = function() {
       var points, polygons = data.map(function() {
         return [];
       }), fx = d3_functor(x), fy = d3_functor(y), d, i, n = data.length, Z = 1e6;
-      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = new Array(n), 
+      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = new Array(n),
       i = 0; i < n; ++i) {
         points[i] = [ +fx.call(this, d = data[i], i), +fy.call(this, d, i) ];
       }
@@ -13166,7 +13166,7 @@ d3 = function() {
       var points, graph = data.map(function() {
         return [];
       }), links = [], fx = d3_functor(x), fy = d3_functor(y), d, i, n = data.length;
-      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = new Array(n), 
+      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = new Array(n),
       i = 0; i < n; ++i) {
         points[i] = [ +fx.call(this, d = data[i], i), +fy.call(this, d, i) ];
       }
@@ -13562,7 +13562,7 @@ d3 = function() {
     };
     quadtree.extent = function(_) {
       if (!arguments.length) return x1 == null ? null : [ [ x1, y1 ], [ x2, y2 ] ];
-      if (_ == null) x1 = y1 = x2 = y2 = null; else x1 = +_[0][0], y1 = +_[0][1], x2 = +_[1][0], 
+      if (_ == null) x1 = y1 = x2 = y2 = null; else x1 = +_[0][0], y1 = +_[0][1], x2 = +_[1][0],
       y2 = +_[1][1];
       return quadtree;
     };
@@ -15266,7 +15266,7 @@ d3 = function() {
         return d3_layout_treemapPad(node, x);
       }
       var type;
-      pad = (padding = x) == null ? d3_layout_treemapPadNull : (type = typeof x) === "function" ? padFunction : type === "number" ? (x = [ x, x, x, x ], 
+      pad = (padding = x) == null ? d3_layout_treemapPadNull : (type = typeof x) === "function" ? padFunction : type === "number" ? (x = [ x, x, x, x ],
       padConstant) : padConstant;
       return treemap;
     };
@@ -15535,7 +15535,7 @@ d3 = function() {
     scale.tickFormat = function(n, format) {
       if (!arguments.length) return d3_scale_logFormat;
       if (arguments.length < 2) format = d3_scale_logFormat; else if (typeof format !== "function") format = d3.format(format);
-      var k = Math.max(.1, n / scale.ticks().length), f = positive ? (e = 1e-12, Math.ceil) : (e = -1e-12, 
+      var k = Math.max(.1, n / scale.ticks().length), f = positive ? (e = 1e-12, Math.ceil) : (e = -1e-12,
       Math.floor), e;
       return function(d) {
         return d / pow(f(log(d) + e)) <= k ? format(d) : "";
@@ -15822,7 +15822,7 @@ d3 = function() {
   d3.svg.arc = function() {
     var innerRadius = d3_svg_arcInnerRadius, outerRadius = d3_svg_arcOuterRadius, startAngle = d3_svg_arcStartAngle, endAngle = d3_svg_arcEndAngle;
     function arc() {
-      var r0 = innerRadius.apply(this, arguments), r1 = outerRadius.apply(this, arguments), a0 = startAngle.apply(this, arguments) + d3_svg_arcOffset, a1 = endAngle.apply(this, arguments) + d3_svg_arcOffset, da = (a1 < a0 && (da = a0, 
+      var r0 = innerRadius.apply(this, arguments), r1 = outerRadius.apply(this, arguments), a0 = startAngle.apply(this, arguments) + d3_svg_arcOffset, a1 = endAngle.apply(this, arguments) + d3_svg_arcOffset, da = (a1 < a0 && (da = a0,
       a0 = a1, a1 = da), a1 - a0), df = da < π ? "0" : "1", c0 = Math.cos(a0), s0 = Math.sin(a0), c1 = Math.cos(a1), s1 = Math.sin(a1);
       return da >= d3_svg_arcMax ? r0 ? "M0," + r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + -r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + r1 + "M0," + r0 + "A" + r0 + "," + r0 + " 0 1,0 0," + -r0 + "A" + r0 + "," + r0 + " 0 1,0 0," + r0 + "Z" : "M0," + r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + -r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + r1 + "Z" : r0 ? "M" + r1 * c0 + "," + r1 * s0 + "A" + r1 + "," + r1 + " 0 " + df + ",1 " + r1 * c1 + "," + r1 * s1 + "L" + r0 * c1 + "," + r0 * s1 + "A" + r0 + "," + r0 + " 0 " + df + ",0 " + r0 * c0 + "," + r0 * s0 + "Z" : "M" + r1 * c0 + "," + r1 * s0 + "A" + r1 + "," + r1 + " 0 " + df + ",1 " + r1 * c1 + "," + r1 * s1 + "L0,0" + "Z";
     }
@@ -16412,7 +16412,7 @@ d3 = function() {
         var ticks = tickValues == null ? scale.ticks ? scale.ticks.apply(scale, tickArguments_) : scale.domain() : tickValues, tickFormat = tickFormat_ == null ? scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments_) : String : tickFormat_;
         var subticks = d3_svg_axisSubdivide(scale, ticks, tickSubdivide), subtick = g.selectAll(".tick.minor").data(subticks, String), subtickEnter = subtick.enter().insert("line", ".tick").attr("class", "tick minor").style("opacity", 1e-6), subtickExit = d3.transition(subtick.exit()).style("opacity", 1e-6).remove(), subtickUpdate = d3.transition(subtick).style("opacity", 1);
         var tick = g.selectAll(".tick.major").data(ticks, String), tickEnter = tick.enter().insert("g", ".domain").attr("class", "tick major").style("opacity", 1e-6), tickExit = d3.transition(tick.exit()).style("opacity", 1e-6).remove(), tickUpdate = d3.transition(tick).style("opacity", 1), tickTransform;
-        var range = d3_scaleRange(scale), path = g.selectAll(".domain").data([ 0 ]), pathUpdate = (path.enter().append("path").attr("class", "domain"), 
+        var range = d3_scaleRange(scale), path = g.selectAll(".domain").data([ 0 ]), pathUpdate = (path.enter().append("path").attr("class", "domain"),
         d3.transition(path));
         var scale1 = scale.copy(), scale0 = this.__chart__ || scale1;
         this.__chart__ = scale1;
@@ -18303,7 +18303,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("></g>\n</svg>\n");
   return buffer;
-  
+
 });
 
 })();
@@ -50720,7 +50720,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "footer", options) : helperMissing.call(depth0, "partial", "footer", options))));
   data.buffer.push("\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -50729,7 +50729,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container\">\n    <div class=\"hero charts-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n    <div class=\"container hero-content-container\">\n      <div class=\"row\">\n        <div class=\"span12 hero-tagline center-align hidden-tablet\">\n          <h1 class=\"elevated\">Ember Charts</h1>\n          <p class=\"elevated\">A beautiful and easily extensible chart suite built with D3.js and Ember.js<br><br>");
@@ -50744,13 +50744,13 @@ function program1(depth0,data) {
   return buffer;
   }
 function program2(depth0,data) {
-  
-  
+
+
   data.buffer.push("Download Ember-Charts");
   }
 
 function program4(depth0,data) {
-  
+
   var buffer = '';
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container small-hero-container\">\n    <div class=\"hero charts-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n  </div>\n");
@@ -50775,7 +50775,7 @@ function program4(depth0,data) {
   data.buffer.push("\n");
   data.buffer.push("\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/_sub_navigation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -50784,44 +50784,44 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Overview &amp; Getting Started");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("API &amp; Documentation");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Horizontal Bar");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("Vertical Bar");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("Pie Chart");
   }
 
 function program11(depth0,data) {
-  
-  
+
+
   data.buffer.push("Scatter Plot");
   }
 
 function program13(depth0,data) {
-  
-  
+
+
   data.buffer.push("Time Series");
   }
 
@@ -50869,7 +50869,7 @@ function program13(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n  </ul>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/bubble"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -50908,7 +50908,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n    </pre>\n  </div>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/documentation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -50919,7 +50919,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
   data.buffer.push("\n<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <h1>Ember Charts API</h1>\n  <h2>Time-series-chart Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>barData</td>\n      <td>undefined</td>\n      <td>\n        <p>Time series data to be represented by bars.  This is an array of\n        data points.  Each data point is an object with at least three fields:\n        <em>time</em>, <em>value</em>, and <em>label</em>.  The time field\n        contains a JavaScript Date.  The value field is a Number.  The label\n        field indicates which group (series) a data point belongs to.  Example:</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// average high temperature (degrees F) by city\n[\n  {\n    date: new Date(2013, 05, 01),\n    value: 64,\n    label: 'San Francisco'\n  },\n  {\n    date: new Date(2013, 05, 01),\n    value: 93,\n    label: 'Phoenix'\n  },\n  {\n    date: new Date(2013, 06, 01),\n    value: 66,\n    label: 'San Francisco'\n  },\n  {\n    date: new Date(2013, 06, 01),\n    value: 103,\n    label: 'Phoenix'\n  },\n  ...\n]</pre>\n        </div>\n      </td>\n    </tr>\n    <tr>\n      <td>lineData</td>\n      <td>undefined</td>\n      <td>\n        <p>Time series data to be represented by bars.  Format is the same as for\n        the <em>barData</em> time series above.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedInterval</td>\n      <td>M</td>\n      <td>\n        <p>Interval between ticks on the time axis.  Can be 'D' (days), 'W'\n        (weeks), 'M' (months), 'Q' (quarters), or 'Y' (years).</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td>\n        <p>Base color that the color palette will be generated from.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>timeDelta</td>\n      <td>month</td>\n      <td>\n        <p>The time interval used represented by each group when using grouped\n        bars.  Can be 'day', 'week', 'month', 'quarter', 'year'</p>\n      </td>\n    </tr>\n    <tr>\n      <td>barPadding</td>\n      <td>0</td>\n      <td>\n        <p>Space between bars, as fraction of total bar + padding space.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>barGroupPadding</td>\n      <td>0.25</td>\n      <td>\n        <p>Space between bar groups, as fraction of total bar + padding space.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>stackBars</td>\n      <td>false</td>\n      <td>\n        <p>Stacks bars, otherwise it groups them  horizontally.</p>\n    </td>\n    </tr>\n    <tr>\n      <td>yAxisFromZero</td>\n      <td>false</td>\n      <td>\n        <p>Force the Y axis to start at zero, instead of the smallest Y value\n        provided.</p>\n      </td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Horizonta-Bar Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>minBarThickness</td>\n      <td>20</td>\n      <td>\n        <p>Miminum bar width in pixels.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>maxBarThickness</td>\n      <td>60</td>\n      <td>\n        <p>Maximum bar width in pixels.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td><p>Base color that the color palette will be generated from.</p>\n    </td>\n    </tr>\n    <tr>\n      <td>data</td>\n      <td>undefined</td>\n      <td>\n        <p>Data to be represented by bars.  This is an array of data points.  Each\n        data point is an object with at least two fields: <em>value</em>\n        (Number), and <em>label</em> (String).</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// Population\n[\n  {\n    value: 825111,\n    label: 'San Francisco'\n  },\n  {\n    value: 984299,\n    label: 'San Jose'\n  },\n  {\n    value: 400740,\n    label: 'Oakland'\n  },\n  ...\n]</pre>\n        </div>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSortType</td>\n      <td>value</td>\n      <td>\n        <p>Field from each data point by which the bars will be sorted.</p>\n      </td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Vertical-Bar Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>maxBarThickness</td>\n      <td>60</td>\n      <td>\n        <p>Maximum bar width in pixels.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td>\n        <p>Base color that the color palette will be generated from.</p>\n      </td>\n   </tr>\n    <tr>\n      <td>data</td>\n      <td>undefined</td>\n      <td>\n        <p>Data to be represented by bars.  This is an array of data points.  Each\n        data point is an object with at least two fields: <em>value</em>\n        (Number), and <em>label</em> (String).  A third field <em>group</em>\n        (String) is optional for each data point.  The prescence of the group\n        field will group the bars based on the value of this field.</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// percentage absolute return\n[\n  {\n    value: 21.51,\n    label: 'Google',\n    group: 'Tech'\n  },\n  {\n    value: 10.10,\n    label: 'Microsoft',\n    group: 'Tech'\n  },\n  {\n    value: 15.32,\n    label: 'ExxonMobil',\n    group: 'Energy'\n  },\n  {\n    value: -7.11,\n    label: 'Schlumberger',\n    group: 'Energy'\n  },\n  ...\n]</pre>\n        </div>\n      </td>\n    </tr>\n    <tr>\n      <td>maxLabelHeight</td>\n      <td>50</td>\n      <td>\n        <p>Space allocated for rotated labels on the bottom of the chart. If labels\n        are rotated, they will be extended beyond labelHeight up to\n        maxLabelHeight.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>withinGroupPadding</td>\n      <td>0</td>\n      <td>\n        <p>Space between bars, as fraction of bar size.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>stackBars</td>\n      <td>false</td>\n      <td>\n        <p>Stacks bars, otherwise it groups them  horizontally.</p>\n      </td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Pie Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>maxRadius</td>\n      <td>2000</td>\n      <td>\n        <p>The maximum size in pixels of the radius of the pie.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>minSlicePercent</td>\n      <td>5</td>\n      <td>\n        The smallest slices will be combined into an \"Other\" slice until no\n        slice is smaller than minSlicePercent. \"Other\" is also guaranteed to be\n        larger than minSlicePercent.\n      </td>\n    </tr>\n    <tr>\n      <td>maxNumberOfSlices</td>\n      <td>8</td>\n      <td>\n        <p>The maximum number of slices. If the number of slices is greater\n        than this then the smallest slices will be combined into an \"other\"\n        slice until there are at most maxNumberOfSlices.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td>\n        <p>Base color that the color palette will be generated from.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSortType</td>\n      <td>value</td>\n      <td>\n        <p>Field from each data point by which the pie-slices will be sorted.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>data</td>\n      <td>undefined</td>\n      <td>\n        <p>Data to be represented by pie-slices.  This is an array of data points.\n        Each data point is an object with at least two fields: <em>value</em>\n        (Number), and <em>label</em> (String).</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// Population\n[\n  {\n  value: 825111,\n  label: 'San Francisco'\n  },\n  {\n  value: 984299,\n  label: 'San Jose'\n  },\n  {\n  value: 400740,\n  label: 'Oakland'\n  },\n  ...\n]</pre>\n        </div>\n      </td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Scatter Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>dotRadius</td>\n      <td>7</td>\n      <td>\n        <p>Size of each icon on the scatter plot.</p>\n      </td>\n    </tr>\n    <tr>\n      <td>data</td>\n      <td>undefined</td>\n      <td>\n        <p>Data to be represented by points on a scatter plot.  This is an array of\n        data points.  Each data point is an object with at least two fields:\n        <em>xValue</em> (Number), and <em>yValue</em> (Number).  XValue and\n        yValue correspond to an individual measurement.</p>\n\n        <p>A third field <em>group</em>, indicating the group to which the\n        measurement belongs,  is optional.  We display a different icon for each\n        group if the number of groups is less than or equal to the maximum\n        number of icons.  Otherwise, a standard icon is used for all groups.</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// January minimum temperature in degrees F (yValue)\n// by latitude (xValue) and region\n[\n  {\n  \"group\": \"West Coast\",\n  \"xValue\": 38.4,\n  \"yValue\": 42\n  },\n  {\n  \"group\": \"Midwest\",\n  \"xValue\": 42.3,\n  \"yValue\": 21\n  },\n  {\n  \"group\": \"West Coast\",\n  \"xValue\": 34.2,\n  \"yValue\": 47\n  },\n  {\n  \"group\": \"South\",\n  \"xValue\": 33.9,\n  \"yValue\": 37\n  },\n  ...\n]</pre>\n        </div>\n        </code>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td>\n        <p>Base color that the color palette will be generated from.</p>\n      </td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Bubble Options</h2>\n  <table class=\"table ember-charts-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>data</td>\n      <td>undefined</td>\n      <td>\n        <p>Data to be represented by bubbles in a bubble chart.  This is an array\n        of data points.  Each data point is an object with at least two fields:\n        <em>value</em> (Number), and <em>label</em> (String).</p>\n        <div class=\"highlight\">\n<pre class=\"prettyprint lang-js\">// Population\n[\n  {\n    value: 825111,\n    label: 'San Francisco'\n  },\n  {\n    value: 984299,\n    label: 'San Jose'\n  },\n  {\n    value: 400740,\n    label: 'Oakland'\n  },\n  ...\n]</pre>\n        </div>\n      </td>\n    </tr>\n    <tr>\n      <td>selectedSeedColor</td>\n      <td>rgb(65, 65, 65)</td>\n      <td>\n        <p>Base color that the color palette will be generated from.</p>\n      </td>\n    </tr>\n  </table>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/horizontal_bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -50995,7 +50995,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/overview"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51004,32 +51004,32 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n      <div class=\"col-md-4\">\n        <h4>Time Series</h4>\n        <img class=\"preview-box\" src=\"img/preview_chart_time_series.png\" />\n      </div>\n    ");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n      <div class=\"col-md-4\">\n        <h4>Horizontal Bar</h4>\n        <img class=\"preview-box\" src=\"img/preview_chart_horizontal_bar.png\" />\n      </div>\n    ");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n      <div class=\"col-md-4\">\n        <h4>Vertical Bar</h4>\n        <img class=\"preview-box\" src=\"img/preview_chart_vertical_bar.png\" />\n      </div>\n    ");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n      <div class=\"col-md-4\">\n        <h4>Pie</h4>\n        <img class=\"preview-box\" src=\"img/preview_chart_pie.png\" />\n      </div>\n    ");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n      <div class=\"col-md-4\">\n        <h4>Scatter</h4>\n        <img class=\"preview-box\" src=\"img/preview_chart_scatter.png\" />\n      </div>\n    ");
   }
 
@@ -51066,7 +51066,7 @@ function program9(depth0,data) {
   data.buffer.push("\n    ");
   data.buffer.push("\n  </div>\n\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h3>Features</h3>\n      <ul class=\"styled\">\n        <li>Coming soon.</li>\n      </ul>\n    </div>\n    <div class=\"col-md-6\">\n      <h3>Dependencies</h3>\n      <ul class=\"styled\">\n        <li><a target=\"_BLANK\" href=\"http://emberjs.com/\">Ember.js</a></li>\n        <li><a target=\"_BLANK\" href=\"http://d3js.org/\">D3.js</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-charts/\">Clone it from Github</a> or <a href=\"https://github.com/Addepar/ember-charts/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000/gh_pages</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-charts/tree/version-0.1\">version-0.1 →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-charts <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-charts/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-charts repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-charts.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-charts/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/pie"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51150,7 +51150,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/scatter"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51205,7 +51205,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/time_series"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51313,7 +51313,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_charts/vertical_bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51400,7 +51400,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51409,7 +51409,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container\">\n    <div class=\"hero table-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n    <div class=\"container hero-content-container\">\n      <div class=\"row\">\n        <div class=\"span12 hero-tagline center-align hidden-tablet\">\n          <h1 class=\"elevated\">Ember Table</h1>\n          <p class=\"elevated\">A fast, lazy rendered, easily extensible table built with Ember.js.<br><br>");
@@ -51424,13 +51424,13 @@ function program1(depth0,data) {
   return buffer;
   }
 function program2(depth0,data) {
-  
-  
+
+
   data.buffer.push("Download Ember-Table");
   }
 
 function program4(depth0,data) {
-  
+
   var buffer = '';
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container small-hero-container\">\n    <div class=\"hero table-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n  </div>\n");
@@ -51453,7 +51453,7 @@ function program4(depth0,data) {
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/_sub_navigation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51462,68 +51462,68 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Overview &amp; Getting Started");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("API &amp; Documentation");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Hello World Table");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("AJAX cells");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("Bar cells");
   }
 
 function program11(depth0,data) {
-  
-  
+
+
   data.buffer.push("Dynamic bar cells");
   }
 
 function program13(depth0,data) {
-  
-  
+
+
   data.buffer.push("Tree &amp; financial table");
   }
 
 function program15(depth0,data) {
-  
-  
+
+
   data.buffer.push("Editable cells");
   }
 
 function program17(depth0,data) {
-  
-  
+
+
   data.buffer.push("Sparkline cells");
   }
 
 function program19(depth0,data) {
-  
-  
+
+
   data.buffer.push("Horizon cells");
   }
 
 function program21(depth0,data) {
-  
-  
+
+
   data.buffer.push("Fluid table");
   }
 
@@ -51595,7 +51595,7 @@ function program21(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n  </ul>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/ajax"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51619,7 +51619,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n      <div class=\"example-description\">\n        <p class=\"reduced\">Ember-Table with ajax cells.</p>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n    hasHeader=true\n    hasFooter=false\n    numFixedColumns=0\n    numRows=100\n    rowHeight=35\n    columnsBinding=\"columns\"\n    contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.EmberTableAjaxLazyDataSource = Ember.ArrayProxy.extend\n  createGithubEvent: (row, event) ->\n    row.set 'type',       event.type\n    row.set 'createdAt',  event.created_at\n    row.set 'login',      event.actor.login\n    row.set 'avatar',     event.actor.avatar_url\n    row.set 'isLoaded',   yes\n\n  requestGithubEvent: (page) ->\n    content = @get 'content'\n    start   = (page - 1) * 30\n    end     = start + 30\n    url = \"https://api.github.com/repos/emberjs/ember.js/events?page=#{page}&per_page=30&callback=?\"\n    Ember.$.getJSON url, (json) =>\n      json.data.forEach (event, index) =>\n        row = content[start + index]\n        @createGithubEvent row, event\n    [start...end].forEach (index) ->\n      content[index] = Ember.Object.create eventId: index, isLoaded: no\n\n  objectAt: (index) ->\n    content = @get 'content'\n    #if index is content.get('length') - 1\n    #  content.pushObjects(new Array(30))\n    row = content[index]\n    return row if row and not row.get('error')\n    @requestGithubEvent Math.floor(index / 30 + 1)\n    content[index]\n\nApp.ApplicationController = Ember.Controller.extend\n  numRows: 100\n\n  columns: Ember.computed ->\n    avatar = Ember.Table.ColumnDefinition.create\n      columnWidth: 80\n      headerCellName: 'avatar'\n      tableCellViewClass:  'App.EmberTableAjaxImageTableCell'\n      contentPath: 'avatar'\n    columnNames = ['login', 'type', 'createdAt']\n    columns = columnNames.map (key, index) ->\n      Ember.Table.ColumnDefinition.create\n        columnWidth: 150\n        headerCellName: key.w()\n        contentPath: key\n    columns.unshift avatar\n    columns\n\n  content: Ember.computed ->\n    App.EmberTableAjaxLazyDataSource.create\n      content: new Array(@get('numRows'))\n  .property 'numRows'\n</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/ajax_table/ajax_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51628,7 +51628,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', hashContexts, hashTypes;
   data.buffer.push("\n  <img width=\"30\" ");
   hashContexts = {'src': depth0};
@@ -51641,8 +51641,8 @@ function program1(depth0,data) {
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n  <img src=\"img/loading.gif\" style=\"padding: 8px;\"></img>\n");
   }
 
@@ -51651,7 +51651,7 @@ function program3(depth0,data) {
   stack1 = helpers['if'].call(depth0, "view.rowContent.isLoaded", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   else { data.buffer.push(''); }
-  
+
 });
 
 Ember.TEMPLATES["ember_table/bar_table/bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51669,7 +51669,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || depth0['bind-attr']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
   data.buffer.push(">\n</span>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/bars"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51691,7 +51691,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n  </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n    hasHeader=true\n    hasFooter=false\n    rowHeight=30\n    columnsBinding=\"columns\"\n    contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>bar_table_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;span class=&quot;bar-cell&quot; &#123;&#123;bind-attr style=&quot;view.histogramStyle&quot;&#125;&#125;&gt;&lt;/span&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>bar_table_cell_view.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.BarTableCellView = Ember.Table.TableCell.extend\n  templateName:     'ember_table/bar_table/bar'\n  classNameBindings:['column.color']\n  barWidth: Ember.computed ->\n    {column, row} = @getProperties 'column', 'row'\n    return 0 unless column and row\n    Math.round(+@get('cellContent'))\n  .property 'column', 'row', 'cellContent'\n\n  histogramStyle: Ember.computed ->\n    \"width: #{@get('barWidth')}%;\"\n  .property 'barWidth'</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  numRows: 100\n\n  columns: Ember.computed ->\n    colors  = ['blue', 'teal', 'green', 'yellow', 'orange']\n    column1 = Ember.Table.ColumnDefinition.create\n      columnWidth:    50\n      headerCellName: 'Name'\n      contentPath: 'key'\n    columns = colors.map (color, index) ->\n      Ember.Table.ColumnDefinition.create\n        color: color\n        headerCellName: 'Bar'\n        tableCellViewClass: 'App.BarTableCell'\n        contentPath: \"value#{index + 1}\"\n    columns.unshift(column1)\n    columns\n\n  content: Ember.computed ->\n    [0...@get('numRows')].map (num, index) ->\n      key: index\n      value1: Math.random() * 80 + 10\n      value2: Math.random() * 80 + 10\n      value3: Math.random() * 80 + 10\n      value4: Math.random() * 80 + 10\n      value5: Math.random() * 80 + 10\n  .property 'numRows'\n</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/documentation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51700,8 +51700,8 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("here");
   }
 
@@ -51714,7 +51714,7 @@ function program1(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push(". In particular, you might get errors if you don’t properly bind your columns and content of the table, using “columnsBinding=” and “contentBinding=”.<br/><br/>\n            Both of these settings refer to variables in the corresponding controller (which here should be MyTableController), such that if you set “columnsBinding=exampleVariable”, then the columns will be bound to “exampleVariable” in the controller. This gives you control over the look and content of the table.<br/><br/>\n            Before, you may have had “controllerBinding=” here. You don’t need this any more: the controller being used with this template will be used for the table too, by default.</li>\n            <li>Move any properties you had defined in your TableContainerView (if you had one) into the controller. See the examples for more information on how table properties should be set now.</li>\n          </ol>\n        </div>\n        <div class=\"col-md-5\">\n          <h2>Troubleshooting</h2>\n          <ul class=\"styled styled-spacious\">\n            <li>If you were using old Ember Table objects like the RowArrayProxy, take another look and consider whether you really need it. During my migration I was able to remove it by changing the “contentBinding=” in my handlebars file to a more appropriate variable for content.</li>\n            <li>If you are having errors with template names not being found, it may be due to a change with inferring names. For me, my old template names used hyphens, and changing them to underscores automatically connected them to the rest of my application.</li>\n          </ul>\n        </div>\n      </div>\n\n      <hr>\n      <h1>API</h1>\n      <h2>Ember.Table.TableComponent Options</h2>\n\n      <table class=\"table ember-table-options\">\n        <tr>\n          <th style=\"width: 200px;\">Option</th>\n          <th style=\"width: 150px;\">Default</th>\n          <th>Description</th>\n        </tr>\n        <tr>\n          <td>content <b>(required)</b></td>\n          <td>null</td>\n          <td>\n            <p>\n              An array which returns row objects. Each column definition\n              must define a function which takes a row object and\n              returns the value for that cell. E.g. the row object might\n              be a hash, in which case the column definition's function\n              might simply get the value corresponding to its key. The\n              row object might be a function, in which case the column\n              definition's function might evaluate the function at a\n              given value. Etc.\n            </p>\n          </td>\n        <tr>\n          <td>columns <b>(required)</b></td>\n          <td>null</td>\n          <td>\n            <p>\n              An array of column definitions. Allows you to specify\n              column configuration - e.g. whether the column is resizable,\n              its css class, etc. (see column definition API for more\n              details)\n            </p>\n          </td>\n        </tr>\n        <tr>\n          <td>numFixedColumns</td>\n          <td>0</td>\n          <td><p>The number of frozen column on the left table.</p></td>\n        </tr>\n        <tr>\n          <td>numFooterRow</td>\n          <td>0</td>\n          <td><p>The number of footer rows in the table.</p></td>\n        </tr>\n        <tr>\n          <td>rowHeight</td>\n          <td>30</td>\n          <td><p>The row height, which is necessary to calculate the height for the lazy rendering.</p></td>\n        </tr>\n        <tr>\n          <td>minHeaderHeight</td>\n          <td>30</td>\n          <td><p>The minimum header height in pixels.</p></td>\n        </tr>\n        <tr>\n          <td>footerHeight</td>\n          <td>30</td>\n          <td><p>The minimum footer height in pixels.</p></td>\n        </tr>\n        <tr>\n          <td>hasHeader</td>\n          <td>true</td>\n          <td><p>Shows the header block.</p></td>\n        </tr>\n        <tr>\n          <td>hasFooter</td>\n          <td>true</td>\n          <td><p>Shows a the footer block.</p></td>\n        </tr>\n        <tr>\n          <td>forceFillColumns</td>\n          <td>false</td>\n          <td><p>Expands the columns to fill the given width.</p></td>\n        </tr>\n        <tr>\n          <td>enableColumnReorder</td>\n          <td>true</td>\n          <td><p>Allows the user the reorder the columns to their liking.</p></td>\n        </tr>\n      </table>\n\n      <h2>Ember.Table.ColumnDefinition Options</h2>\n      <table class=\"table ember-table-options\">\n        <tr>\n          <th style=\"width: 200px;\">Option</th>\n          <th style=\"width: 150px;\">Default</th>\n          <th>Description</th>\n        </tr>\n        <tr>\n          <td>headerCellName</td>\n          <td>undefined</td>\n          <td><p>Text that appears in the column header.</p></td>\n        </tr>\n        <tr>\n          <td>contentPath</td>\n          <td>undefined</td>\n          <td><p>Path of the content for a cell. Given a row, this is the\n            path of the value that is extracted from that row.</p></td>\n        </tr>\n        <tr>\n          <td>minWidth</td>\n          <td>undefined</td>\n          <td><p>Minimum width of the column.</p></td>\n        </tr>\n        <tr>\n          <td>maxWidth</td>\n          <td>undefined</td>\n          <td><p>Maximum width of the column.</p></td>\n        </tr>\n        <tr>\n          <td>defaultColumnWidth</td>\n          <td>150</td>\n          <td><p>The width of the column, by default (in pixels).</p></td>\n        </tr>\n        <tr>\n          <td>isResizable</td>\n          <td>yes</td>\n          <td><p>If yes then the column can be resized, otherwise it\n            cannot.</p></td>\n        </tr>\n        <tr>\n          <td>isSortable</td>\n          <td>yes</td>\n          <td><p>If yes then the column can be sorted.</p></td>\n        </tr>\n        <tr>\n          <td>textAlign</td>\n          <td>'text-align-right'</td>\n          <td><p>Aligns text left/center/right in the column.</p></td>\n        </tr>\n        <tr>\n          <td>canAutoResize</td>\n          <td>yes</td>\n          <td><p>If yes then column will automatically resized to be\n            larger when there is additional space for the table.</p></td>\n        </tr>\n      </table>\n\n      <h2>Ember.Table.TableCell Options</h2>\n      <table class=\"table ember-table-options\">\n        <tr>\n          <th style=\"width: 200px;\">Option</th>\n          <th style=\"width: 150px;\">Default</th>\n          <th>Description</th>\n        </tr>\n        <tr>\n          <td>templateName</td>\n          <td>'table-cell'</td>\n          <td><p>The name of the template to be rendered into the cell.\n            Used for rendering custom templates<p></td>\n        </tr>\n        <tr>\n          <td>classNames</td>\n          <td>['ember-table-cell']</td>\n          <td><p>The class names applied to the cell. Override to give\n            the cell custom styling (border, background color, etc.)<p></td>\n        </tr>\n        <tr>\n          <td>classNameBindings</td>\n          <td>'column.textAlign'</td>\n          <td><p>A binding used to dynamically associate class names\n            with this table cell. E.g. you can bind to a column property\n            to have cell colors or styles vary across columns.<p></td>\n        </tr>\n        <tr>\n          <td>styleBindings</td>\n          <td>'width'</td>\n          <td><p>Values which are bound to the cell's style attr. See\n            Ember.STyleBindingsMixin documentation for more details.<p></td>\n        </tr>\n      </table>\n\n      <h2>Ember.Table.HeaderCell Options</h2>\n      <table class=\"table ember-table-options\">\n        <tr>\n          <th style=\"width: 200px;\">Option</th>\n          <th style=\"width: 150px;\">Default</th>\n          <th>Description</th>\n        </tr>\n        <tr>\n          <td>templateName</td>\n          <td>'table-cell'</td>\n          <td><p>The name of the template to be rendered into the cell.\n            Used for rendering custom templates<p></td>\n        </tr>\n        <tr>\n          <td>classNames</td>\n          <td>['ember-table-cell']</td>\n          <td><p>The class names applied to the cell. Override to give\n            the cell custom styling (border, background color, etc.)<p></td>\n        </tr>\n        <tr>\n          <td>classNameBindings</td>\n          <td>'column.textAlign'</td>\n          <td><p>A binding used to dynamically associate class names\n            with this table cell. E.g. you can bind to a column property\n            to have cell colors or styles vary across columns.<p></td>\n        </tr>\n        <tr>\n          <td>styleBindings</td>\n          <td>'width'</td>\n          <td><p>Values which are bound to the cell's style attr. See\n            Ember.STyleBindingsMixin documentation for more details.<p></td>\n      </table>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/dynamic-bars"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51736,7 +51736,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n  hasFooter=false\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>bar_table_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;span class=&quot;bar-cell&quot; &#123;&#123;bind-attr style=&quot;view.histogramStyle&quot;&#125;&#125;&gt;&lt;/span&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>bar_table_cell_view.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.BarTableCellView = Ember.Table.TableCell.extend\n  templateName:     'ember_table/bar_table/bar'\n  classNameBindings:['column.color']\n  barWidth: Ember.computed ->\n    {column, row} = @getProperties 'column', 'row'\n    return 0 unless column and row\n    Math.round(+@get('cellContent'))\n  .property 'column', 'row', 'cellContent'\n\n  histogramStyle: Ember.computed ->\n    \"width: #{@get('barWidth')}%;\"\n  .property 'barWidth'</pre>\n      </div>\n    </div>\n\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  numRows: 100\n\n  getNextValue: (current) ->\n    current = current + (Math.random() * 10 - 5)\n    current = Math.min(100, current)\n    current = Math.max(0, current)\n    current\n\n  init: ->\n    setInterval =>\n      @get('content').forEach (item) =>\n        item.set 'value1', @getNextValue(item.get('value1'))\n        item.set 'value2', @getNextValue(item.get('value2'))\n        item.set 'value3', @getNextValue(item.get('value3'))\n        item.set 'value4', @getNextValue(item.get('value4'))\n        item.set 'value5', @getNextValue(item.get('value5'))\n    , 1500\n\n  columns: Ember.computed ->\n    colors  = ['blue', 'teal', 'green', 'yellow', 'orange']\n    column1 = Ember.Table.ColumnDefinition.create\n      columnWidth:    50\n      headerCellName: 'Name'\n      contentPath: 'key'\n    columns = colors.map (color, index) ->\n      Ember.Table.ColumnDefinition.create\n        color: color\n        headerCellName: 'Bar'\n        tableCellViewClass: 'App.BarTableCell'\n        contentPath: \"value#{index + 1}\"\n    columns.unshift(column1)\n    columns\n\n  content: Ember.computed ->\n    [0...@get('numRows')].map (num, index) ->\n      Ember.Object.create\n        key: index\n        value1: Math.random() * 80 + 10\n        value2: Math.random() * 80 + 10\n        value3: Math.random() * 80 + 10\n        value4: Math.random() * 80 + 10\n        value5: Math.random() * 80 + 10\n  .property 'numRows'</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/editable"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51759,7 +51759,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n  hasHeader=true\n  hasFooter=false\n  numFixedColumns=0\n  rowHeight=35\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>editable_table_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;span class=&quot;ember-table-content&quot;&gt;<br/>  &#123;&#123;#if view.isEditing&#125;&#125;<br/>    &#123;&#123;view view.innerTextField&#125;&#125;<br/>  &#123;&#123;else&#125;&#125;<br/>    &lt;span class='content'&gt;&#123;&#123;view.cellContent&#125;&#125;&lt;/span&gt;<br/>  &#123;&#123;/if&#125;&#125;<br/>&lt;/span&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>rating_table_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;div class=&quot;rating&quot;&gt;<br/>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br/>&lt;/div&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>editable_table_cell_views.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.EditableTableCell = Ember.Table.TableCell.extend\n  className: 'editable-table-cell'\n  templateName: 'ember_table/editable_table/editable_table_cell'\n  isEditing:  no\n  type:       'text'\n\n  innerTextField: Ember.TextField.extend\n    typeBinding:  'parentView.type'\n    valueBinding: 'parentView.cellContent'\n    didInsertElement: -> @$().focus()\n    focusOut: (event) -> @set 'parentView.isEditing', no\n\n  onRowContentDidChange: Ember.observer ->\n    @set 'isEditing', no\n  , 'rowContent'\n\n  click: (event) ->\n    @set 'isEditing', yes\n    event.stopPropagation()\n\nApp.DatePickerTableCell = App.EditableTableCell.extend\n  type: 'date'\n\nApp.RatingTableCell = Ember.Table.TableCell.extend\n  classNames: 'rating-table-cell'\n  templateName: 'ember_table/editable_table/rating_table_cell'\n\n  onRowContentDidChange: Ember.observer ->\n    @applyRating @get('cellContent')\n  , 'cellContent'\n\n  didInsertElement: ->\n    @_super()\n    @onRowContentDidChange()\n\n  applyRating: (rating) ->\n    @$('.rating span').removeClass('active')\n    span   = @$('.rating span').get(rating)\n    $(span).addClass('active')\n\n  click: (event) ->\n    rating = @$('.rating span').index(event.target)\n    return if rating is -1\n    @get('column').setCellContent(@get('rowContent'), rating)\n    @applyRating(rating)\n</pre>\n      </div>\n    </div>\n\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.EmberTableEditableController = Ember.Controller.extend\n  numRows: 100\n  columns: Ember.computed ->\n    columnNames = ['open', 'close']\n    dateColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Date'\n      tableCellViewClass: 'App.DatePickerTableCell'\n      getCellContent: (row) -> row['date'].toString('yyyy-MM-dd')\n      setCellContent: (row, value) -> row['date'] = value\n    ratingColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 150\n      headerCellName: 'Analyst Rating'\n      tableCellViewClass: 'App.RatingTableCell'\n      contentPath: 'rating'\n      setCellContent: (row, value) -> row['rating'] = value\n    columns= columnNames.map (key, index) ->\n      name = key.charAt(0).toUpperCase() + key.slice(1)\n      Ember.Table.ColumnDefinition.create\n        columnWidth: 100\n        headerCellName: name\n        tableCellViewClass: 'App.EditableTableCell'\n        getCellContent: (row) -> row[key].toFixed(2)\n        setCellContent: (row, value) -> row[key] = +value\n    columns.unshift(ratingColumn)\n    columns.unshift(dateColumn)\n    columns\n  .property()\n\n  content: Ember.computed ->\n    [0...@get('numRows')].map (num, idx) ->\n      index: idx\n      date:  Date.now().add(days: idx)\n      open:  Math.random() * 100 - 50\n      close: Math.random() * 100 - 50\n      rating:Math.round(Math.random() * 4)\n  .property 'numRows'</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/editable_table/editable_table_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51768,7 +51768,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n  ");
   hashTypes = {};
@@ -51779,7 +51779,7 @@ function program1(depth0,data) {
   }
 
 function program3(depth0,data) {
-  
+
   var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n  <span class='content'>");
   hashTypes = {};
@@ -51794,17 +51794,17 @@ function program3(depth0,data) {
   stack1 = helpers['if'].call(depth0, "view.isEditing", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   else { data.buffer.push(''); }
-  
+
 });
 
 Ember.TEMPLATES["ember_table/editable_table/rating_table_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  
+
 
 
   data.buffer.push("<div class=\"rating\">\n  <span></span><span></span><span></span><span></span><span></span>\n</div>");
-  
+
 });
 
 Ember.TEMPLATES["ember_table/financial"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51821,7 +51821,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n        </div>\n      </div>\n      <div class=\"example-description\">\n        <p class=\"reduced\">Ember-Table with financial theme.</p>\n      </div>\n    </div>\n  </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n  hasHeader=true\n  hasFooter=false\n  numFixedColumns=0\n  rowHeight=35\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;div class=&quot;ember-table-cell-container&quot;&gt;<br/>  &lt;span class=&quot;ember-table-content&quot;&gt;<br/>    &#123;&#123;view.cellContent&#125;&#125;<br/>  &lt;/span&gt;<br/>&lt;/div&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_tree_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;div class=&quot;ember-table-cell-container&quot; &#123;&#123;bindAttr style=&quot;view.paddingStyle&quot;&#125;&#125;&gt;<br/>  &lt;span &#123;&#123;bindAttr class=&quot;:ember-table-toggle-span view.row.isLeaf::ember-table-toggle<br/>    view.row.isCollapsed:ember-table-expand:ember-table-collapse&quot;&#125;&#125;<br/>    &#123;&#123;action toggleCollapse view.row&#125;&#125;&gt;<br/>    &lt;i class=&quot;icon-caret-down ember-table-toggle-icon&quot;&gt;&lt;/i&gt;<br/>  &lt;/span&gt;<br/>  &lt;span class=&quot;ember-table-content&quot;&gt;<br/>    &#123;&#123;view.cellContent&#125;&#125;<br/>  &lt;/span&gt;<br/>&lt;/div&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_header_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;div class=&quot;ember-table-cell-container&quot;&gt;<br/>  &lt;div class=&quot;ember-table-header-content-container&quot;&gt;<br/>    &lt;span class=&quot;ember-table-content&quot;&gt;<br/>      &#123;&#123;view.content.headerCellName&#125;&#125;<br/>    &lt;/span&gt;<br/>  &lt;/div&gt;<br/>&lt;/div&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_header_tree_cell.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&lt;div class=&quot;ember-table-cell-container&quot;&gt;<br/>  &lt;span &#123;&#123;bindAttr class=&quot;:ember-table-toggle-span :ember-table-toggle<br/>      isCollapsed:ember-table-expand:ember-table-collapse&quot;&#125;&#125;<br/>      &#123;&#123;action toggleTableCollapse&#125;&#125;&gt;<br/>    &lt;i class=&quot;icon-caret-down ember-table-toggle-icon&quot;&gt;&lt;/i&gt;<br/>  &lt;/span&gt;<br/>  &lt;div class=&quot;ember-table-header-content-container&quot;&gt;<br/>    &lt;span class=&quot;ember-table-content&quot;&gt;<br/>      &#123;&#123;view.column.headerCellName&#125;&#125;<br/>    &lt;/span&gt;<br/>  &lt;/div&gt;<br/>&lt;/div&gt;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_cell_views.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.FinancialTableCell = Ember.Table.TableCell.extend\n  templateName: 'ember_table/financial_table/financial_table_cell'\n\nApp.FinancialTableHeaderCell = Ember.Table.HeaderCell.extend\n  templateName: 'ember_table/financial_table/financial_table_header_cell'\n\nApp.FinancialTableTreeCell = Ember.Table.TableCell.extend\n  templateName: 'ember_table/financial_table/financial_table_tree_cell'\n  classNames:   'ember-table-table-tree-cell'\n  paddingStyle: Ember.computed ->\n    \"padding-left:#{@get('row.indentation')}px;\"\n  .property 'row.indentation'\n\nApp.FinancialTableHeaderTreeCell = Ember.Table.HeaderCell.extend\n  templateName: 'ember_table/financial_table/financial_table_header_tree_cell'\n  classNames:   'ember-table-table-header-tree-cell'\n</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_row.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.FinancialTableTreeTableRow = Ember.Table.Row.extend\n  content:  null\n  children: null\n  parent:   null\n  isRoot:   no\n  isLeaf:   no\n  isCollapsed: no\n  isShowing: yes\n  indentationSpacing: 20\n  groupName: null\n\n  # This may look ugly, but this is necessary. By doing the styles computation\n  # imperatively we made the initial table load 10-100x faster (certain cases)\n  computeStyles: (parent) ->\n    groupingLevel = 0\n    indentation   = 0\n    isShowing     = yes\n    if parent\n      isShowing = parent.get('isShowing') and not parent.get('isCollapsed')\n      pGroupingLevel = parent.get 'groupingLevel'\n      groupingLevel  = pGroupingLevel\n      groupingLevel  += 1 if parent.get('groupName') isnt @get('groupName')\n      indentType = if groupingLevel is pGroupingLevel then 'half' else 'full'\n      spacing    = @get 'indentationSpacing'\n      if not parent.get('isRoot')\n        indentation = parent.get('indentation')\n        indentation += (if indentType is 'half' then spacing / 2 else spacing)\n    @set 'groupingLevel', groupingLevel\n    @set 'indentation', indentation\n    @set 'isShowing', isShowing\n\n  computeRowStyle: (maxLevels) ->\n    level = @getFormattingLevel @get('groupingLevel'), maxLevels\n    @set 'rowStyle', \"ember-table-row-style-#{level}\"\n\n  recursiveCollapse: (isCollapsed) ->\n    @set 'isCollapsed', isCollapsed\n    @get('children').forEach (child) ->\n      child.recursiveCollapse isCollapsed\n\n  getFormattingLevel: (level, maxLevels) ->\n    switch maxLevels\n      when 1 then return 5\n      when 2\n        return 2 if level is 1\n        return 5\n      when 3\n        return 1 if level is 1\n        return 3 if level is 2\n        return 5\n      when 4\n        return 1 if level is 1\n        return 2 if level is 2\n        return 4 if level is 4\n        return 5\n      when 5\n        return level\n      else\n        return 5 if level is maxLevels\n        return Math.min(level, 4)</pre>\n      </div>\n    </div>\n\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>financial_table_component.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.FinancialTableComponent = Ember.Table.EmberTableComponent.extend\n  # overridding default properties\n  numFixedColumns: 1\n  isCollapsed: no\n  isHeaderHeightResizable: yes\n  rowHeight: 30\n  hasHeader: yes\n  hasFooter: yes\n  headerHeight: 70\n\n  # custom properties\n  sortAscending: no\n  sortColumn: null\n  selection: null\n\n  actions:\n    toggleTableCollapse: (event) ->\n      @toggleProperty 'isCollapsed'\n      isCollapsed = @get 'isCollapsed'\n      children = @get('root.children')\n      return unless children and children.get('length') > 0\n      children.forEach (child) -> child.recursiveCollapse isCollapsed\n      @notifyPropertyChange 'rows'\n\n    toggleCollapse: (row) ->\n      row.toggleProperty 'isCollapsed'\n      Ember.run.next this, -> @notifyPropertyChange 'rows'\n\n  ##############################################################################\n  # Data Conversions\n  ##############################################################################\n  data: null\n\n  columns: Ember.computed ->\n    data = @get 'data'\n    return unless data\n    names = @get('data.value_factors').getEach('display_name')\n    columns = names.map (name, index) ->\n      Ember.Table.ColumnDefinition.create\n        index: index\n        headerCellName: name\n        headerCellViewClass:  'App.FinancialTableHeaderCell'\n        tableCellViewClass:   'App.FinancialTableCell'\n        getCellContent: (row) ->\n          object = row.values[@get('index')]\n          return object.value.toCurrency() if object.type is 'money'\n          return object.value.toPercent()  if object.type is 'percent'\n          \"-\"\n    columns.unshiftObject @get('groupingColumn')\n    columns\n  .property 'data.valueFactors.@each', 'groupingColumn'\n\n  groupingColumn: Ember.computed ->\n    groupingFactors = @get 'data.grouping_factors'\n    name = groupingFactors.getEach('display_name').join ' ▸ '\n    Ember.Table.ColumnDefinition.create\n      headerCellName: name\n      columnWidth: 400\n      isTreeColumn: yes\n      isSortable: no\n      textAlign: 'text-align-left'\n      headerCellViewClass:  'App.FinancialTableHeaderTreeCell'\n      tableCellViewClass:   'App.FinancialTableTreeCell'\n      contentPath: 'group_value'\n  .property 'data.grouping_factors.@each'\n\n  root: Ember.computed ->\n    data = @get 'data'\n    return unless data\n    @createTree(null, data.root)\n  .property 'data', 'sortAscending', 'sortColumn'\n\n  rows: Ember.computed ->\n    root = @get 'root'\n    return Ember.A() unless root\n    rows = @flattenTree null, root, Ember.A()\n    @computeStyles null, root\n    maxGroupingLevel = Math.max.apply rows.getEach('groupingLevel')\n    rows.forEach (row) -> row.computeRowStyle(maxGroupingLevel)\n    rows\n  .property 'root'\n\n  # OPTIMIZATION HACK\n  bodyContent: Ember.computed ->\n    rows = @get('rows')\n    return Ember.A() unless rows\n    rows = rows.slice(1, rows.get('length'))\n    rows.filterProperty('isShowing')\n  .property 'rows'\n\n  footerContent: Ember.computed ->\n    rows = @get('rows')\n    return Ember.A() unless rows\n    rows.slice(0, 1)\n  .property 'rows'\n\n  orderBy: (item1, item2) ->\n    sortColumn = @get 'sortColumn'\n    sortAscending = @get 'sortAscending'\n    return 1 unless sortColumn\n    value1 = sortColumn.getCellContent item1.get('content')\n    value2 = sortColumn.getCellContent item2.get('content')\n    result = Ember.compare value1, value2\n    if sortAscending then result else -result\n\n  createTree: (parent, node) ->\n    row = App.FinancialTableTreeTableRow.create()\n    children = (node.children || []).map (child) =>\n      @createTree row, child\n    # TODO(Peter): Hack... only collapse table if it should collapseByDefault\n    # and it is not the root. Currently the total row is the root, and if it\n    # is collapse, it causes nothing to show in the table and there is no way\n    # to get expand it.\n    row.setProperties\n      isRoot:     not parent\n      isLeaf:     Ember.isEmpty(children)\n      content:    node\n      parent:     parent\n      children:   children\n      groupName:  node.group_name\n      isCollapsed:no\n    row\n\n  flattenTree: (parent, node, rows) ->\n    rows.pushObject node\n    (node.children || []).forEach (child) =>\n      @flattenTree node, child, rows\n    rows\n\n  computeStyles: (parent, node) ->\n    node.computeStyles parent\n    node.get('children').forEach (child) =>\n      @computeStyles node, child</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/financial_table/financial_table_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51836,7 +51836,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.cellContent", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </span>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/financial_table/financial_table_header_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51851,7 +51851,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.content.headerCellName", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n    </span>\n  </div>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/financial_table/financial_table_header_tree_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51876,7 +51876,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.column.headerCellName", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n    </span>\n  </div>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/financial_table/financial_table_tree_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51907,7 +51907,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.cellContent", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </span>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/fluid"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51929,7 +51929,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;view App.FluidTable\n  hasHeader=true\n  hasFooter=false\n  numFixedColumns=0\n  rowHeight=30\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>fluid_table.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.FluidTable = Ember.Table.EmberTableComponent.extend\n  # actual width of the table columns (non-frozen columns)\n  _tableColumnsWidth: \"100%\"\n\n  prepareTableColumns: (columns) ->\n    @_super(columns)\n    # Some maintenance on the columns for percent resizing\n    for col, i in columns\n      col.set(\"_nextColumn\", columns.objectAt(i + 1))\n\nApp.FluidColumnDefinition = Ember.Table.ColumnDefinition.extend\n  isResizable: Ember.computed ->\n    if @get('_nextColumn') then yes else no\n  .property '_nextColumn'\n\n  resize: (pxWidth, tableWidth)->\n    newMaxWidth = null\n    tableWidth = tableWidth || @get(\"controller._tableContainerWidth\")\n    return unless tableWidth\n\n    percent = (val)->\n      if \"string\" is typeof val\n        +(val.replace(\"%\", \"\"))\n      else\n        val * 100 / tableWidth\n\n    # either from a tabel resize or a column resize\n    oldWidth = percent(@get(\"columnWidth\"))\n    newWidth = if 'number' is typeof pxWidth then percent(pxWidth) else oldWidth\n\n    # calculate the pixel change for\n    nextCol = @get(\"_nextColumn\")\n    if nextCol\n      # calculate new and old percent width\n      diff = oldWidth - newWidth + percent(nextCol.get(\"columnWidth\"))\n      nextCol.set \"columnWidth\", diff/100*tableWidth\n      newMaxWidth = (newWidth + diff)/100*tableWidth - 100\n\n    @set \"columnWidth\", newWidth/100*tableWidth\n    @notifyPropertyChange(\"columnWidth\")\n    newMaxWidth\n\n  _convertColumnToWidth: Ember.beforeObserver ->\n    tableWidth = @get( \"controller._tableContainerWidth\" )\n    @set(\"columnWidth\", @get(\"columnWidth\")/tableWidth*100 + \"%\") if tableWidth\n  , \"controller._tableContainerWidth\"\n\n  _resizeToTable: Ember.observer ->\n    @resize()\n  , \"controller._tableContainerWidth\"\n</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  numRows: 100\n\n  columns: Ember.computed ->\n    dateColumn = App.FluidColumnDefinition.create\n      columnWidth: \"40\"\n      headerCellName: 'Date'\n      getCellContent: (row) -> row['date'].toDateString();\n    openColumn = App.FluidColumnDefinition.create\n      columnWidth: \"15\"\n      headerCellName: 'Open'\n      getCellContent: (row) -> row['open'].toFixed(2)\n    highColumn = App.FluidColumnDefinition.create\n      columnWidth: \"15\"\n      headerCellName: 'High'\n      getCellContent: (row) -> row['high'].toFixed(2)\n    lowColumn = App.FluidColumnDefinition.create\n      columnWidth: \"15\"\n      headerCellName: 'Low'\n      getCellContent: (row) -> row['low'].toFixed(2)\n    closeColumn = App.FluidColumnDefinition.create\n      columnWidth: \"15\"\n      headerCellName: 'Close'\n      getCellContent: (row) -> row['close'].toFixed(2)\n    [dateColumn, openColumn, highColumn, lowColumn, closeColumn]\n\n  content: Ember.computed ->\n    [0...@get('numRows')].map (index) ->\n      date = new Date()\n      date.setDate(date.getDate() + index)\n      date:  date\n      open:  Math.random() * 100 - 50\n      high:  Math.random() * 100 - 50\n      low:   Math.random() * 100 - 50\n      close: Math.random() * 100 - 50\n      volume: Math.random() * 1000000\n  .property 'numRows'</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/horizon"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51951,7 +51951,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/overview"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -51960,57 +51960,57 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Hello World Table</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_simple.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Hello World Table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
   }
 
 function program3(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>AJAX cells</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_ajax.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>AJAX cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_ajax.png\" />\n          </div>\n        ");
   }
 
 function program5(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Bar cells</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_bars.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Bar cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_bars.png\" />\n          </div>\n        ");
   }
 
 function program7(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Dynamic bar cells</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_dynamic_bars.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Dynamic bar cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_dynamic_bars.png\" />\n          </div>\n        ");
   }
 
 function program9(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_financial.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_financial.png\" />\n          </div>\n        ");
   }
 
 function program11(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_editable.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_editable.png\" />\n          </div>\n        ");
   }
 
 function program13(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_sparkline.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_sparkline.png\" />\n          </div>\n        ");
   }
 
 function program15(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Horizon cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_horizon.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Horizon cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_horizon.png\" />\n          </div>\n        ");
   }
 
 function program17(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Fluid table</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_table_simple.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Fluid table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
   }
 
   data.buffer.push("\n<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <h1>Ember Table</h1>\n      <p class=\"elevated\">Ember table allows you to render very\n      large data sets by only rendering the rows that are being\n      displayed.<br />It is written as an ember component with an API that is\n      easy to understand and extend.</p>\n\n      <div class=\"example-container\">\n        <div class=\"ember-table-example-container ember-table-financial\">\n          ");
@@ -52073,9 +52073,9 @@ function program17(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.fluid", options) : helperMissing.call(depth0, "linkTo", "emberTable.fluid", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-table/\">Clone it from Github</a> or <a href=\"https://github.com/Addepar/ember-table/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000/gh_pages</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/master\">master →</a></li>\n        <li>v0.0.1 - December 20, 2012. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/version-0.1\">version-0.1 →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-table <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-table repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-table.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
+  data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-table/\">Clone it from Github</a> or <a href=\"https://github.com/Addepar/ember-table/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/master\">master →</a></li>\n        <li>v0.0.1 - December 20, 2012. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/version-0.1\">version-0.1 →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-table <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-table repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-table.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/simple"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52095,7 +52095,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n  hasFooter=false\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  numRows: 100\n\n  columns: Ember.computed ->\n    dateColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 150\n      textAlign: 'text-align-left'\n      headerCellName: 'Date'\n      getCellContent: (row) -> row['date'].toDateString();\n    openColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Open'\n      getCellContent: (row) -> row['open'].toFixed(2)\n    highColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'High'\n      getCellContent: (row) -> row['high'].toFixed(2)\n    lowColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Low'\n      getCellContent: (row) -> row['low'].toFixed(2)\n    closeColumn = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Close'\n      getCellContent: (row) -> row['close'].toFixed(2)\n    [dateColumn, openColumn, highColumn, lowColumn, closeColumn]\n\n  content: Ember.computed ->\n    [0...@get('numRows')].map (index) ->\n      date = new Date()\n      date.setDate(date.getDate() + index)\n      date:  date\n      open:  Math.random() * 100 - 50\n      high:  Math.random() * 100 - 50\n      low:   Math.random() * 100 - 50\n      close: Math.random() * 100 - 50\n      volume: Math.random() * 1000000\n  .property 'numRows'</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/sparkline"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52118,7 +52118,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['table-component'] || depth0['table-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "table-component", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application.hbs</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;table-component\n  hasFooter=false\n  columnsBinding=\"columns\"\n  contentBinding=\"content\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>spark_line_table_cell_view.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.SparkLineTableCellView = Ember.Table.TableCell.extend\n  template: Ember.Handlebars.compile(\"\")\n  heightBinding: 'controller.rowHeight'\n\n  onContentOrSizeDidChange: Ember.observer ->\n    @$('svg').remove()\n    @renderD3View()\n  , 'row', 'width'\n\n  didInsertElement: -> @renderD3View()\n\n  renderD3View: ->\n    data  = @get 'row.timeseries'\n    return unless data\n    h     = @get 'height'\n    w     = @get 'width'\n    p     = 2\n    min   = Math.min.apply(null, data)\n    max   = Math.max.apply(null, data)\n    len   = data.length\n    fill  = d3.scale.category10()\n    xscale= d3.scale.linear().domain([0, len]).range([p, w - p])\n    yscale= d3.scale.linear().domain([min, max]).range([h - p, p])\n    line  = d3.svg.line().x((d, i) -> xscale(i)).y((d) -> yscale(d))\n    svg   = d3.select(\"##{@get('elementId')}\")\n              .append('svg:svg').attr('height', h).attr('width', w);\n    g = svg.append('svg:g')\n    g.append('svg:path')\n     .attr('d', line(data))\n     .attr('stroke', (d) -> fill(Math.round(Math.random()) * 10))\n     .attr('fill', 'none')</pre>\n      </div>\n    </div>\n\n\n    <div class=\"col-md-12 bumper-30\">\n      <h3>application_controller.coffee</h3>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  numRows: 100\n  columns: Ember.computed ->\n    name = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Name'\n      getCellContent: (row) -> 'Asset ' + row['name']\n    open = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Open'\n      getCellContent: (row) -> row['open'].toFixed(2)\n    spark = Ember.Table.ColumnDefinition.create\n      columnWidth: 200\n      headerCellName: 'Sparkline'\n      tableCellViewClass: 'App.SparklineTableExample.SparkCellView'\n      getCellContent: Ember.K\n    close = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Close'\n      getCellContent: (row) -> row['close'].toFixed(2)\n    low = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'Low'\n      getCellContent: (row) -> row['low'].toFixed(2)\n    high = Ember.Table.ColumnDefinition.create\n      columnWidth: 100\n      headerCellName: 'High'\n      getCellContent: (row) -> row['high'].toFixed(2)\n    [name, open, spark, close, low, high]\n\n  content: Ember.computed ->\n    randomWalk = (numSteps) ->\n      lastValue = 0\n      [0...numSteps].map ->\n        lastValue = lastValue + d3.random.normal()()\n\n    [0...@get('numRows')].map (num, index) ->\n      data = randomWalk(100)\n      name: index\n      timeseries: data\n      open:  data[0]\n      close: data[99]\n      low:   Math.min.apply(null, data)\n      high:  Math.max.apply(null, data)\n   .property 'numRows'\n</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/tree_table/table_header_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52137,7 +52137,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.content.headerCellName", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </span>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/tree_table/table_header_tree_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52166,7 +52166,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.column.headerCellName", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </span>\n</div>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_table/tree_table/table_tree_cell"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52191,7 +52191,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "view.cellContent", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n</span>");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52200,7 +52200,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container\">\n    <div class=\"hero widgets-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n    <div class=\"container hero-content-container\">\n      <div class=\"row\">\n        <div class=\"span12 hero-tagline center-align hidden-tablet\">\n          <h1 class=\"elevated\">Ember Widgets</h1>\n          <p class=\"elevated\">A powerful and easy to use component library for Ember.js<br><br>");
@@ -52215,13 +52215,13 @@ function program1(depth0,data) {
   return buffer;
   }
 function program2(depth0,data) {
-  
-  
+
+
   data.buffer.push("Download Ember-Widgets");
   }
 
 function program4(depth0,data) {
-  
+
   var buffer = '';
   data.buffer.push("\n  ");
   data.buffer.push("\n  <div class=\"hero-container small-hero-container\">\n    <div class=\"hero widgets-hero\">\n      <div class=\"hero-overlay\"></div>\n    </div>\n  </div>\n");
@@ -52246,7 +52246,7 @@ function program4(depth0,data) {
   data.buffer.push("\n");
   data.buffer.push("\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/_sub_navigation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52255,44 +52255,44 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Overview");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("API &amp; Documentation");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Accordion");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("Carousel");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("Modal");
   }
 
 function program11(depth0,data) {
-  
-  
+
+
   data.buffer.push("Popover");
   }
 
 function program13(depth0,data) {
-  
-  
+
+
   data.buffer.push("Select");
   }
 
@@ -52340,7 +52340,7 @@ function program13(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n  </ul>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/accordion"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52349,7 +52349,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, options, hashTypes, hashContexts, self=this, helperMissing=helpers.helperMissing, functionType="function", blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
   data.buffer.push("\n          ");
   hashContexts = {'isActive': depth0,'title': depth0};
@@ -52380,8 +52380,8 @@ function program1(depth0,data) {
   return buffer;
   }
 function program2(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n            Anim pariatur cliche reprehenderit...\n          ");
   }
 
@@ -52395,7 +52395,7 @@ function program2(depth0,data) {
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h4>Application.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;#accordion-component&#125;&#125;\n  &#123;&#123;#accordion-item isActive=true title=&quot;Collapsible Group Item #1&quot;&#125;&#125;\n    Anim pariatur cliche reprehenderit...\n  &#123;&#123;/accordion-item&#125;&#125;\n  &#123;&#123;#accordion-item title=&quot;Collapsible Group Item #2&quot;&#125;&#125;\n    Anim pariatur cliche reprehenderit...\n  &#123;&#123;/accordion-item&#125;&#125;\n  &#123;&#123;#accordion-item title=&quot;Collapsible Group Item #3&quot;&#125;&#125;\n    Anim pariatur cliche reprehenderit...\n  &#123;&#123;/accordion-item&#125;&#125;\n&#123;&#123;/accordion-component&#125;&#125;</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/carousel"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52404,7 +52404,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, options, hashTypes, hashContexts, self=this, helperMissing=helpers.helperMissing, functionType="function", blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
-  
+
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
   data.buffer.push("\n          ");
   hashContexts = {'class': depth0};
@@ -52434,21 +52434,21 @@ function program1(depth0,data) {
   return buffer;
   }
 function program2(depth0,data) {
-  
-  
-  data.buffer.push("\n            <img src=\"/gh_pages/img/bootstrap-mdo-sfmoma-01.jpg\" alt=\"\">\n          ");
+
+
+  data.buffer.push("\n            <img src=\"/img/bootstrap-mdo-sfmoma-01.jpg\" alt=\"\">\n          ");
   }
 
 function program4(depth0,data) {
-  
-  
-  data.buffer.push("\n            <img src=\"/gh_pages/img/bootstrap-mdo-sfmoma-02.jpg\" alt=\"\">\n          ");
+
+
+  data.buffer.push("\n            <img src=\"/img/bootstrap-mdo-sfmoma-02.jpg\" alt=\"\">\n          ");
   }
 
 function program6(depth0,data) {
-  
-  
-  data.buffer.push("\n            <img src=\"/gh_pages/img/bootstrap-mdo-sfmoma-03.jpg\" alt=\"\">\n          ");
+
+
+  data.buffer.push("\n            <img src=\"/img/bootstrap-mdo-sfmoma-03.jpg\" alt=\"\">\n          ");
   }
 
   data.buffer.push("<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <h2>Carousel <small> Ember.Widgets.Carousel</small></h2>\n      <p class=\"elevated\">The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</p>\n\n      <div class=\"example-container\">\n        ");
@@ -52459,9 +52459,9 @@ function program6(depth0,data) {
   hashContexts = {};
   if (!helpers['carousel-component']) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h4>Application.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;#carousel-component&#125;&#125;<br/>  &#123;&#123;#carousel-item class=&quot;active&quot;&#125;&#125;<br/>    &lt;img src=&quot;/gh_pages/img/bootstrap-mdo-sfmoma-01.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>  &#123;&#123;#carousel-item&#125;&#125;<br/>    &lt;img src=&quot;/gh_pages/img/bootstrap-mdo-sfmoma-02.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>  &#123;&#123;#carousel-item&#125;&#125;<br/>    &lt;img src=&quot;/gh_pages/img/bootstrap-mdo-sfmoma-03.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>&#123;&#123;/carousel-component&#125;&#125;</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
+  data.buffer.push("\n      </div>\n    </div>\n\n    <div class=\"col-md-12 bumper-30\">\n      <h4>Application.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;#carousel-component&#125;&#125;<br/>  &#123;&#123;#carousel-item class=&quot;active&quot;&#125;&#125;<br/>    &lt;img src=&quot;/img/bootstrap-mdo-sfmoma-01.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>  &#123;&#123;#carousel-item&#125;&#125;<br/>    &lt;img src=&quot;/img/bootstrap-mdo-sfmoma-02.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>  &#123;&#123;#carousel-item&#125;&#125;<br/>    &lt;img src=&quot;/img/bootstrap-mdo-sfmoma-03.jpg&quot; alt=&quot;&quot;&gt;<br/>  &#123;&#123;/carousel-item&#125;&#125;<br/>&#123;&#123;/carousel-component&#125;&#125;</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/custom_modal_content"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52476,7 +52476,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "content.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("?</p>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/custom_popover_content"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52491,7 +52491,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "content.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("?");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/documentation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52502,7 +52502,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
   data.buffer.push("\n<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <h1>API</h1>\n  <h2>Ember.Widgets.SelectComponent Options</h2>\n  <table class=\"table ember-widgets-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>itemViewClass</td>\n      <td>Ember.Widgets.SelectOptionView</td>\n      <td><p>The view to be displayed in the rows of the select.</p></td>\n    </tr>\n    <tr>\n      <td>prompt</td>\n      <td>Select a Value</td>\n      <td><p>The prompt to be displayed by default in the select, when\n        nothing else is selected.</p></td>\n    </tr>\n    <tr>\n      <td>highlightedIndex</td>\n      <td>-1</td>\n      <td><p>The index of the select item that is highlighted.</p></td>\n    </tr>\n    <tr>\n      <td>tabindex</td>\n      <td>-1</td>\n      <td><p>The tabindex of the component.</p></td>\n    </tr>\n    <tr>\n      <td>showDropdown</td>\n      <td>no</td>\n      <td><p>If yes then shows a dropdown.</p></td>\n    </tr>\n    <tr>\n      <td>dropdownHeight</td>\n      <td>300</td>\n      <td><p>The height of the dropdown.</p></td>\n    </tr>\n    <tr>\n      <td>rowHeight</td>\n      <td>26</td>\n      <td><p>Row height in pixels for the lazy list. Important: rowHeight must be synched with the CSS</p></td>\n    </tr>\n    <tr>\n      <td>sortLabels</td>\n      <td>yes</td>\n      <td><p>Option to indicate whether we should sort the labels</p></td>\n    </tr>\n    <tr>\n      <td>isSelect</td>\n      <td>no</td>\n      <td><p>If isSelect is true, we will not show the search box</p></td>\n    </tr>\n    <tr>\n      <td>isButton</td>\n      <td>yes</td>\n      <td><p>If is button is true, the select will look like a button</p></td>\n    </tr>\n    <tr>\n      <td>dropdownToggleIcon</td>\n      <td>icon-sort</td>\n      <td><p>Font-awesome dependency - Change the icon when necessary</p></td>\n    </tr>\n    <tr>\n      <td>content</td>\n      <td>[]</td>\n      <td><p>The list of options.</p></td>\n    </tr>\n    <tr>\n      <td>selection</td>\n      <td>null</td>\n      <td><p>The option which is currently selected.</p></td>\n    </tr>\n    <tr>\n      <td>optionLabelPath</td>\n      <td>&#39;&#39;</td>\n      <td><p>The path of the label, for options.</p></td>\n    </tr>\n    <tr>\n      <td>optionValuePath</td>\n      <td>&#39;&#39;</td>\n      <td><p>The path of the value, for options.</p></td>\n    </tr>\n    <tr>\n      <td>optionGroupPath</td>\n      <td>&#39;&#39;</td>\n      <td><p>The path of the group, for options.</p></td>\n    </tr>\n    <tr>\n      <td>optionDefaultPath</td>\n      <td>&#39;&#39;</td>\n      <td><p>The path of the default option.</p></td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Ember.Widgets.PopoverComponent Options</h2>\n  <table class=\"table ember-widgets-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>targetElement</td>\n      <td>null</td>\n      <td><p>The element this popover will be attached to.</p></td>\n    </tr>\n    <tr>\n      <td>placement</td>\n      <td>top</td>\n      <td><p>The direction the popover will pop up. Other options are\n        bottom, top-right, top-left, bottom-right, bottom-left, left,\n        and right</p></td>\n    </tr>\n    <tr>\n      <td>title</td>\n      <td>''</td>\n      <td><p>The title to be displayed on the popover.</p></td>\n    </tr>\n    <tr>\n      <td>left</td>\n      <td>0</td>\n      <td><p>The left offset of the popover, in pixels.</p></td>\n    </tr>\n    <tr>\n      <td>top</td>\n      <td>0</td>\n      <td><p>The top offset of the popover, in pixels.</p></td>\n    </tr>\n    <tr>\n      <td>fade</td>\n      <td>yes</td>\n      <td><p>If this is yes then the modal fades in/out.</p></td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Ember.Widgets.ModalComponent Options</h2>\n  <table class=\"table ember-widgets-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>backdrop</td>\n      <td>yes</td>\n      <td><p>If this is yes then the modal will be displayed with a\n        semi-opaque backdrop.</p></td>\n    </tr>\n    <tr>\n      <td>fade</td>\n      <td>yes</td>\n      <td><p>If this is yes then the modal fades in/out.</p></td>\n    </tr>\n    <tr>\n      <td>headerText</td>\n      <td>\"Modal Header\"</td>\n      <td><p>The text that is displayed in the header of the modal.</p></td>\n    </tr>\n    <tr>\n      <td>confirmText</td>\n      <td>\"Confirm\"</td>\n      <td><p>The text that is displayed in the confirmation button of\n        the modal.</p></td>\n    </tr>\n    <tr>\n      <td>cancelText</td>\n      <td>\"Cancel\"</td>\n      <td><p>The text that is displayed in the cancel button of the\n        modal.</p></td>\n    </tr>\n    <tr>\n      <td>bodyElementSelector</td>\n      <td>'.modal-backdrop'</td>\n      <td><p></p></td>\n    </tr>\n  </table>\n\n  <hr>\n  <h2>Ember.Widgets.CarouselComponent Options</h2>\n  <table class=\"table ember-widgets-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>activeIndex</td>\n      <td>0</td>\n      <td><p>The index of the carousel item which is currently being\n        shown.</p></td>\n    </tr>\n  </table>\n\n\n  layoutName: 'carousel'\n  classNames: ['carousel', 'slide']\n  classNameBindings: ['sliding']\n\n  <hr>\n  <h2>Ember.Widgets.AccordionComponent Options</h2>\n  <table class=\"table ember-widgets-options\">\n    <tr>\n      <th style=\"width: 200px;\">Option</th>\n      <th style=\"width: 150px;\">Default</th>\n      <th>Description</th>\n    </tr>\n    <tr>\n      <td>activeIndex</td>\n      <td>0</td>\n      <td><p>The index of the accordian item which is currently being\n        shown.</p></td>\n    </tr>\n  </table>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/modal"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52521,7 +52521,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "showModalWithCustomContent", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push(">\n          Show Modal With Custom Content\n        </button>\n      </div>\n\n      <h4 class=\"bumper-30\">Application_controller.coffee</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.ApplicationController = Ember.Controller.extend\n  actions:\n    showModal: ->\n      Ember.Widgets.ModalComponent.popup\n        targetObject: this\n        confirm: \"modalConfirm\"\n        cancel: \"modalCancel\"\n        content: { name: \"Louis\" }\n        contentViewClass: App.CustomModalContentView\n\n    modalConfirm: -> console.log(\"Modal Confirm!\")\n\n    modalCancel: -> console.log(\"Modal Cancel!\")\n</pre>\n      </div>\n\n      <h4 class=\"bumper-30\">Custom_modal_content_view.coffee</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.CustomModalContentView = Ember.View.extend\n  templateName: 'custom-modal-content'\n</pre>\n      </div>\n\n      <h4 class=\"bumper-30\">Custom-modal-content.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">Isn't this one fine day &#123;&#123;content.name&#125;&#125;?</pre>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/overview"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52530,63 +52530,63 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Accordion");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("Carousel");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Modal");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("Popover");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("Select &amp; Multi-Select");
   }
 
 function program11(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Accordion</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_widgets_accordion.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Accordion</h4>\n            <img class=\"preview-box\" src=\"/img/preview_widgets_accordion.png\" />\n          </div>\n        ");
   }
 
 function program13(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Carousel</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_widgets_carousel.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Carousel</h4>\n            <img class=\"preview-box\" src=\"/img/preview_widgets_carousel.png\" />\n          </div>\n        ");
   }
 
 function program15(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Modal</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_widgets_modal.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Modal</h4>\n            <img class=\"preview-box\" src=\"/img/preview_widgets_modal.png\" />\n          </div>\n        ");
   }
 
 function program17(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Popover</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_widgets_popover.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Popover</h4>\n            <img class=\"preview-box\" src=\"/img/preview_widgets_popover.png\" />\n          </div>\n        ");
   }
 
 function program19(depth0,data) {
-  
-  
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Select &amp; Multi-Select</h4>\n            <img class=\"preview-box\" src=\"/gh_pages/img/preview_widgets_select.png\" />\n          </div>\n        ");
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Select &amp; Multi-Select</h4>\n            <img class=\"preview-box\" src=\"/img/preview_widgets_select.png\" />\n          </div>\n        ");
   }
 
   data.buffer.push("\n<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <h1>Ember Widgets</h1>\n      <p class=\"elevated\">A component library built with the <a\n        target=\"_BLANK\" href=\"http://emberjs.com/\">Ember.js</a>\n      framework. Includes easy to extend components such as select,\n      popover, modal, carousel, and accordion. This library is built on\n      bootstrap 3.0 CSS and represents our ideas about component best\n      practices.</p>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h3>Features</h3>\n      <ul class=\"styled\">\n        <li>");
@@ -52649,9 +52649,9 @@ function program19(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.select", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.select", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-widgets/\">Clone it from Github</a> or <a href=\"https://github.com/addepar/ember-widgets/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000/gh_pages</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/tree/master\">master →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-widgets <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-widgets repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-widgets.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
+  data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-widgets/\">Clone it from Github</a> or <a href=\"https://github.com/addepar/ember-widgets/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/tree/master\">master →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-widgets <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-widgets repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-widgets.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-widgets/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/popover"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52660,14 +52660,14 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n          Show Popover Top\n        ");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("\n          Show Popover Button-Left\n        ");
   }
 
@@ -52696,7 +52696,7 @@ function program3(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n      </div>\n\n      <h4 class=\"bumper-30\">Application.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;#popover-link-component tagName=&quot;button&quot;\n  class=&quot;btn btn-primary&quot; placement=&quot;bottom-left&quot;\n  contentViewClass=&quot;App.CustomPopoverContentView&quot;&#125;&#125;\n  Show Popover Button-Left\n&#123;&#123;/popover-link-component&#125;&#125;</pre>\n      </div>\n\n      <h4 class=\"bumper-30\">Custom-popover-content.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">Isn't this one fine day &#123;&#123;content.name&#125;&#125;?</pre>\n      </div>\n\n      <h4 class=\"bumper-30\">Custom_popover_content_view.coffee</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-coffee\">App.CustomPopoverContentView = Ember.View.extend\n  templateName: 'custom-popover-content'</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["ember_widgets/select"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52728,7 +52728,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(((stack1 = helpers['multi-select-component'] || depth0['multi-select-component']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "multi-select-component", options))));
   data.buffer.push("\n      </div>\n\n      <h4 class=\"bumper-30\">Application.hbs</h4>\n      <div class=\"highlight\">\n<pre class=\"prettyprint lang-html\">&#123;&#123;multi-select-component\n  contentBinding=\"model\"\n  optionLabelPath=\"name\"\n  optionValuePath=\"code\"\n  classNames=\"multi-select-example\"\n&#125;&#125;</pre>\n      </div>\n    </div>\n\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["footer"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -52737,140 +52737,140 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Overview &amp; Getting Started");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("API &amp; Documentation");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Hello World Table");
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   data.buffer.push("AJAX cells");
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   data.buffer.push("Bar cells");
   }
 
 function program11(depth0,data) {
-  
-  
+
+
   data.buffer.push("Dynamic bar cells");
   }
 
 function program13(depth0,data) {
-  
-  
+
+
   data.buffer.push("Tree &amp; financial table");
   }
 
 function program15(depth0,data) {
-  
-  
+
+
   data.buffer.push("Editable cells");
   }
 
 function program17(depth0,data) {
-  
-  
+
+
   data.buffer.push("Sparkline cells");
   }
 
 function program19(depth0,data) {
-  
-  
+
+
   data.buffer.push("Horizon cells");
   }
 
 function program21(depth0,data) {
-  
-  
+
+
   data.buffer.push("Fluid table");
   }
 
 function program23(depth0,data) {
-  
-  
+
+
   data.buffer.push("Accordion");
   }
 
 function program25(depth0,data) {
-  
-  
+
+
   data.buffer.push("Carousel");
   }
 
 function program27(depth0,data) {
-  
-  
+
+
   data.buffer.push("Modal");
   }
 
 function program29(depth0,data) {
-  
-  
+
+
   data.buffer.push("Popover");
   }
 
 function program31(depth0,data) {
-  
-  
+
+
   data.buffer.push("Select");
   }
 
 function program33(depth0,data) {
-  
-  
+
+
   data.buffer.push("Horizontal Bar");
   }
 
 function program35(depth0,data) {
-  
-  
+
+
   data.buffer.push("Vertical Bar");
   }
 
 function program37(depth0,data) {
-  
-  
+
+
   data.buffer.push("Pie Chart");
   }
 
 function program39(depth0,data) {
-  
-  
+
+
   data.buffer.push("Scatter Plot");
   }
 
 function program41(depth0,data) {
-  
-  
+
+
   data.buffer.push("Time Series");
   }
 
 function program43(depth0,data) {
-  
-  
+
+
   data.buffer.push("Home");
   }
 
 function program45(depth0,data) {
-  
-  
+
+
   data.buffer.push("License");
   }
 
@@ -53038,7 +53038,7 @@ function program45(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>\n            <address>\n              <br><br>\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/446ui\"><strong>Addepar HQ</strong><br>\n              1215 Terra Bella Ave<br>\n              Mountain View, CA 94043</a><br><br>\n\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/xEiCM\"><strong>Addepar NY</strong><br>\n              335 Madison Ave Suite 880<br>\n              New York, NY 10017</a><br>\n            </address>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 center-align\">\n        <p>&copy; 2013 Addepar, Inc.</p>\n      </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -53047,39 +53047,39 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashContexts, hashTypes, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Table");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Widgets");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Charts");
   }
 
 function program7(depth0,data) {
-  
-  
-  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Table</h3>\n          <img src=\"/gh_pages/img/preview_table.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-table\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-table&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
+
+
+  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Table</h3>\n          <img src=\"/img/preview_table.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-table\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-table&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
   }
 
 function program9(depth0,data) {
-  
-  
-  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Widgets</h3>\n          <img src=\"/gh_pages/img/preview_widgets.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/addepar-components\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=addepar-components&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
+
+
+  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Widgets</h3>\n          <img src=\"/img/preview_widgets.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/addepar-components\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=addepar-components&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
   }
 
 function program11(depth0,data) {
-  
-  
-  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Charts</h3>\n          <img src=\"/gh_pages/img/preview_charts.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-charts\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember- charts&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
+
+
+  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Charts</h3>\n          <img src=\"/img/preview_charts.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-charts\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember- charts&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
   }
 
   data.buffer.push("\n<div class=\"hero-container\">\n  <div class=\"hero index-hero\">\n    <div class=\"hero-overlay\"></div>\n  </div>\n  <div class=\"container hero-content-container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 hero-tagline center-align hidden-tablet\">\n        <h1 class=\"elevated\">Addepar Open Source</h1>\n        <p class=\"elevated index-buttons\">");
@@ -53127,7 +53127,7 @@ function program11(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["license"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -53145,7 +53145,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push("\n<div class=\"hero-container small-hero-container\">\n  <div class=\"hero index-hero\">\n    <div class=\"hero-overlay\"></div>\n  </div>\n</div>\n\n\n");
   data.buffer.push("\n<div class=\"section section-grey\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-6 col-md-offset-3 section-title\">\n        <h1>Code &amp; Documentation Licensing</h1>\n      </div>\n      <div class=\"col-md-6 col-md-offset-3\">\n        <p>The majority of open source software exclusively developed by Addepar is licensed under the liberal terms of the Apache License, Version 2.0. The documentation is generally available under the Creative Commons Attribution 3.0 Unported License. In the end, you are free to use, modify and distribute any documentation, source code or examples within our open source projects as long as you adhere to the licensing conditions present within the projects.</p>\n        <p>Also note that our engineers like to hack on their own open source projects in their free time. For code provided by our engineers outside of our official repositories on GitHub, Addepar does not grant any type of license, whether express or implied, to such code.</p>\n     </div>\n    </div>\n  </div>\n</div>\n");
   return buffer;
-  
+
 });
 
 Ember.TEMPLATES["navigation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
@@ -53154,20 +53154,20 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Table");
   }
 
 function program3(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Widgets");
   }
 
 function program5(depth0,data) {
-  
-  
+
+
   data.buffer.push("Ember Charts");
   }
 
@@ -53191,7 +53191,7 @@ function program5(depth0,data) {
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n    </ul>\n  </div><!-- /.navbar-collapse -->\n</nav>\n");
   return buffer;
-  
+
 });
 
 })();
