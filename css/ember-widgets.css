@@ -1,122 +1,3 @@
-/* General Layout */
-a {
-  color: #777;
-  text-decoration: none;
-}
-a:hover,
-a:active,
-a:focus {
-  color: #373737;
-  cursor: pointer;
-  text-decoration: none;
-}
-.vertical-stretch {
-  height: 100%;
-}
-.bold {
-  font-weight: 600;
-  color: #555555;
-  cursor: pointer;
-}
-/* Bootstrap overrides to use font-awesome icons instead */
-[class^="icon-"],
-[class*=" icon-"] {
-  background-image: none;
-}
-.icon-white {
-  background-image: none;
-}
-i[class^="icon-"] {
-  opacity: 1;
-}
-/* Font changes */
-strong,
-dt,
-.table th {
-  font-weight: bold;
-}
-.navbar .nav > li > a {
-  font-weight: 500;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-h1,
-h2 {
-  font-weight: 200;
-}
-h3 {
-  font-weight: 300;
-}
-h4,
-h5,
-h6 {
-  font-weight: 400;
-  margin-top: 6px;
-}
-/* Dropdowns */
-.dropdown-menu {
-  border: none;
-  padding: 6px 0 6px 0;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-.application-view,
-.application-view > .ember-view:last-child {
-  height: 100%;
-}
-.ember-select .ember-select-results .list-item-view.ember-select-group {
-  font-weight: 500;
-}
-.navbar .dropdown-menu li.ember-select-group:hover {
-  color: #666;
-}
-.tooltip .tooltip-inner {
-  height: 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-svg {
-  display: block;
-  width: 100%;
-}
-.antiscroll-scrollbar {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.datepicker {
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  -moz-background-clip: padding !important;
-  -webkit-background-clip: padding-box !important;
-  background-clip: padding-box !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-  border: 1px solid #ddd !important;
-}
-.datepicker td,
-.datepicker th {
-  width: 22px;
-  -webkit-border-radius: 1px !important;
-  -moz-border-radius: 1px !important;
-  border-radius: 1px !important;
-  -moz-background-clip: padding !important;
-  -webkit-background-clip: padding-box !important;
-  background-clip: padding-box !important;
-}
-.datepicker td.active,
-.datepicker td.active.active,
-.datepicker td.active:hover.active {
-  background-image: none;
-  background-color: #222 !important;
-}
 .clearfix {
   *zoom: 1;
 }
@@ -149,8 +30,7 @@ svg {
   position: relative;
   display: inline-block;
   outline: none;
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 12px;
 }
 .ember-select-choice i {
   position: absolute;
@@ -158,8 +38,8 @@ svg {
   right: -6px;
 }
 .ember-select-choice.btn i {
-  top: 8px;
-  right: 5px;
+  top: 11px;
+  right: 15px;
 }
 .ember-select-choice.btn-large i {
   top: 11px;
@@ -209,7 +89,7 @@ svg {
   font-size: 17px;
   line-height: 16px;
   color: #444;
-  font-weight: 700;
+  font-weight: bold;
   outline: none;
 }
 .ember-select-choice .ember-select-search-choice-close:hover {
@@ -245,9 +125,6 @@ svg {
 .ember-select-multi .ember-select-choices:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .ember-select-multi .ember-select-choices li {
   float: left;
@@ -275,20 +152,20 @@ svg {
   background: #ffffff url('../img/spinner.gif') no-repeat 100% !important;
 }
 .ember-select-multi .ember-select-choices .ember-select-search-choice {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
+  position: relative;
   background-color: #DAE4F6;
   color: #222;
   border: 1px solid #DAE4F6;
-  line-height: 23px;
+  line-height: 27px;
   padding: 0 19px 0 5px;
-  margin: 1px;
-  position: relative;
+  margin: 3px 0 0 3px;
   cursor: default;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .ember-select-multi .ember-select-choices .ember-select-search-choice .ember-select-search-choice-close {
   display: block;
@@ -300,7 +177,7 @@ svg {
   font-size: 17px;
   line-height: 16px;
   color: #444;
-  font-weight: 700;
+  font-weight: bold;
   outline: none;
 }
 .ember-select-multi .ember-select-choices .ember-select-search-choice .ember-select-search-choice-close:hover {
@@ -336,8 +213,6 @@ svg {
   padding: 3px 20px 3px 5px;
   outline: 0;
   border: 1px solid #aaa;
-  font-family: sans-serif;
-  font-size: 1em;
   width: 100%;
   margin: 0;
   height: auto !important;
@@ -413,7 +288,7 @@ svg {
   box-sizing: border-box;
 }
 .ember-select .dropdown-menu {
-  min-width: 160px;
+  min-width: 200px;
   max-width: 600px;
   padding: 0;
 }
