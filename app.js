@@ -19447,7 +19447,7 @@ Ember.Charts.HorizontalBarComponent = Ember.Charts.ChartComponent.extend(Ember.C
       return yAxis;
     }
   }).volatile(),
-  renderVars: ['barThickness', 'yScale', 'finishedData'],
+  renderVars: ['barThickness', 'yScale', 'finishedData', 'colorRange'],
   drawChart: function() {
     this.updateData();
     this.updateAxes();
@@ -20221,7 +20221,7 @@ Ember.Charts.VerticalBarComponent = Ember.Charts.ChartComponent.extend(Ember.Cha
     rotateLabelRadians = Math.PI / 180 * this.get('rotateLabelDegrees');
     return Math.abs(this.get('maxLabelHeight') / Math.sin(rotateLabelRadians));
   }).property('maxLabelHeight', 'rotateLabelDegrees'),
-  renderVars: ['xWithinGroupScale', 'xBetweenGroupScale', 'yScale', 'finishedData'],
+  renderVars: ['xWithinGroupScale', 'xBetweenGroupScale', 'yScale', 'finishedData', 'getSeriesColor'],
   drawChart: function() {
     this.updateData();
     this.updateLayout();
@@ -20528,8 +20528,8 @@ Ember.Charts.ScatterComponent = Ember.Charts.ChartComponent.extend(Ember.Charts.
     }
     return legendData;
   }).property('hasNoData', 'groupedData', 'getGroupShape', 'getGroupColor', 'displayGroups', 'isShowingTotal', 'totalPointData'),
-  tooltipXValueDisplayName: 'X Factor',
-  tooltipYValueDisplayName: 'Y Factor',
+  xValueDisplayName: 'X Factor',
+  yValueDisplayName: 'Y Factor',
   showDetails: Ember.computed(function() {
     var _this = this;
     return function(data, i, element) {
@@ -20538,9 +20538,9 @@ Ember.Charts.ScatterComponent = Ember.Charts.ChartComponent.extend(Ember.Charts.
       formatXValue = _this.get('formatXValue');
       formatYValue = _this.get('formatYValue');
       content = "<span class=\"tip-label\">" + data.group + "</span>";
-      content += "<span class=\"name\">" + (_this.get('tooltipXValueDisplayName')) + ": </span>";
+      content += "<span class=\"name\">" + (_this.get('xValueDisplayName')) + ": </span>";
       content += "<span class=\"value\">" + (formatXValue(data.xValue)) + "</span><br/>";
-      content += "<span class=\"name\">" + (_this.get('tooltipYValueDisplayName')) + ": </span>";
+      content += "<span class=\"name\">" + (_this.get('yValueDisplayName')) + ": </span>";
       content += "<span class=\"value\">" + (formatYValue(data.yValue)) + "</span>";
       return _this.showTooltip(content, d3.event);
     };
@@ -20607,7 +20607,7 @@ Ember.Charts.ScatterComponent = Ember.Charts.ChartComponent.extend(Ember.Charts.
   yAxisTitle: Ember.computed(function() {
     return this.selectOrCreateAxisTitle('.y.axis-title').attr('class', 'y axis-title');
   }).volatile(),
-  renderVars: ['xScale', 'yScale', 'dotShapeArea', 'finishedData'],
+  renderVars: ['xScale', 'yScale', 'dotShapeArea', 'finishedData', 'xValueDisplayName', 'yValueDisplayName'],
   drawChart: function() {
     this.updateTotalPointData();
     this.updateData();
@@ -20681,11 +20681,11 @@ Ember.Charts.ScatterComponent = Ember.Charts.ChartComponent.extend(Ember.Charts.
       x: -this.get('labelPadding')
     });
     xAxisPadding = this.get('labelHeightOffset') + this.get('labelPadding');
-    this.get('xAxisTitle').text(this.get('tooltipXValueDisplayName')).style('text-anchor', 'middle').attr({
+    this.get('xAxisTitle').text(this.get('xValueDisplayName')).style('text-anchor', 'middle').attr({
       x: this.get('graphicWidth') / 2 + this.get('labelWidthOffset'),
       y: this.get('graphicBottom') + xAxisPadding
     });
-    return this.get('yAxisTitle').text(this.get('tooltipYValueDisplayName')).style('text-anchor', 'start').attr({
+    return this.get('yAxisTitle').text(this.get('yValueDisplayName')).style('text-anchor', 'start').attr({
       y: 0,
       x: -this.get('labelPadding')
     });
@@ -20884,6 +20884,27 @@ Ember.Charts.TimeSeriesComponent = Ember.Charts.ChartComponent.extend(Ember.Char
   graphicHeight: Ember.computed(function() {
     return this.get('height') - this.get('legendHeight') - this.get('legendChartPadding');
   }).property('height', 'legendHeight', 'legendChartPadding'),
+  timeDelta: Ember.computed(function() {
+    var diffTimeDays, endTime, groupedBarData, startTime;
+    groupedBarData = this.get('groupedBarData');
+    if (Ember.isEmpty(groupedBarData) || groupedBarData.get('length') < 2) {
+      return 'month';
+    }
+    startTime = groupedBarData[0][0].time;
+    endTime = groupedBarData[1][0].time;
+    diffTimeDays = (endTime - startTime) / (24 * 60 * 60 * 1000);
+    if (diffTimeDays > 351) {
+      return 'year';
+    } else if (diffTimeDays > 33) {
+      return 'quarter';
+    } else if (diffTimeDays > 9) {
+      return 'month';
+    } else if (diffTimeDays > 3) {
+      return 'week';
+    } else {
+      return 'day';
+    }
+  }).property('groupedBarData'),
   barDataExtent: Ember.computed(function() {
     var endTime, endTimeGroup, groupedBarData, paddedEnd, paddedStart, startTime, startTimeGroup, timeDelta;
     timeDelta = this.get('timeDelta');
@@ -48745,7 +48766,6 @@ App.EmberChartsTimeSeriesController = App.SlideController.extend({
   selectedLineData: 'daily_two_series',
   selectedBarData: 'monthly_return_triple_series',
   dataIntervals: ['day', 'week', 'month', 'year'],
-  timeDelta: 'month',
   tickIntervals: ['weeks', 'months', 'quarters', 'years'],
   selectedInterval: 'months'
 });
@@ -48793,6 +48813,7 @@ App.EmberChartsHorizontalBarController = App.SlideController.extend({
 
 
 App.EmberChartsVerticalBarController = App.SlideController.extend({
+  betweenGroupPadding: 0,
   withinGroupPadding: 0,
   maxLabelHeight: 40,
   stackBars: false,
@@ -48833,7 +48854,6 @@ App.EmberChartsVerticalBarController = App.SlideController.extend({
 
 
 App.EmberChartsPieController = App.SlideController.extend({
-  labelWidth: 120,
   maxNumberOfSlices: 8,
   minSlicePercent: 2,
   maxRadius: 100,
@@ -48877,6 +48897,22 @@ App.EmberChartsScatterController = App.SlideController.extend({
   data: Ember.computed(function() {
     return this.get('rawDataHash')[this.get('selectedData')];
   }).property('selectedData', 'rawDataHash'),
+  isShowingTotal: false,
+  xValueDisplayName: 'Risk',
+  yValueDisplayName: 'Return',
+  totalPointData: Ember.computed(function() {
+    var data;
+    data = this.get('data');
+    return {
+      group: 'Portfolio Total',
+      xValue: data.reduce((function(prev, d) {
+        return prev + d.xValue;
+      }), 0),
+      yValue: data.reduce((function(prev, d) {
+        return prev + d.yValue;
+      }), 0)
+    };
+  }).property('data'),
   selectedData: 'groupedPercent',
   rawDataHash: Ember.computed(function() {
     return {
@@ -51085,7 +51121,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashTypes = {'min': "STRING",'max': "STRING",'step': "STRING",'valueBinding': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ScrubberComponent", {hash:{
     'min': ("40"),
-    'max': ("2000"),
+    'max': ("300"),
     'step': ("10"),
     'valueBinding': ("maxRadius")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -51135,14 +51171,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push("<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"chart-header\">\n    <h2>Scatter Plot</h2>\n  </div>\n\n  <div class=\"example-container\">\n    <div class=\"chart-container\">\n      ");
-  hashContexts = {'dotRadius': depth0,'data': depth0,'isShowingTotal': depth0,'totalPointData': depth0,'selectedSeedColor': depth0};
-  hashTypes = {'dotRadius': "ID",'data': "ID",'isShowingTotal': "ID",'totalPointData': "ID",'selectedSeedColor': "ID"};
+  hashContexts = {'dotRadius': depth0,'data': depth0,'isShowingTotal': depth0,'totalPointData': depth0,'selectedSeedColor': depth0,'xValueDisplayName': depth0,'yValueDisplayName': depth0};
+  hashTypes = {'dotRadius': "ID",'data': "ID",'isShowingTotal': "ID",'totalPointData': "ID",'selectedSeedColor': "ID",'xValueDisplayName': "ID",'yValueDisplayName': "ID"};
   options = {hash:{
     'dotRadius': ("dotRadius"),
     'data': ("data"),
     'isShowingTotal': ("isShowingTotal"),
     'totalPointData': ("totalPointData"),
-    'selectedSeedColor': ("selectedSeedColor")
+    'selectedSeedColor': ("selectedSeedColor"),
+    'xValueDisplayName': ("xValueDisplayName"),
+    'yValueDisplayName': ("yValueDisplayName")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['scatter-chart'] || depth0['scatter-chart']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "scatter-chart", options))));
   data.buffer.push("\n    </div>\n  </div>\n\n  <div class=\"row bumper-30\">\n    <div class=\"col-md-6\">\n      <h4>Ember Bindings</h4>\n\n      <div class=\"form-horizontal\">\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Data</label>\n          <div class=\"col-lg-8\">\n            ");
@@ -51165,8 +51203,8 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {'min': depth0,'max': depth0,'step': depth0,'valueBinding': depth0};
   hashTypes = {'min': "STRING",'max': "STRING",'step': "STRING",'valueBinding': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ScrubberComponent", {hash:{
-    'min': ("4"),
-    'max': ("10"),
+    'min': ("2"),
+    'max': ("20"),
     'step': ("1"),
     'valueBinding': ("dotRadius")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -51174,7 +51212,27 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "dotRadius", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n      <h4>JSON Data</h4>\n      <div class=\"chart-json\">\n<pre>");
+  data.buffer.push("</span>\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">X Display Name</label>\n          <div class=\"col-lg-8\">\n            ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
+  options = {hash:{
+    'value': ("xValueDisplayName")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.input || depth0.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Y Display Name</label>\n          <div class=\"col-lg-8\">\n            ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
+  options = {hash:{
+    'value': ("yValueDisplayName")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.input || depth0.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <div class=\"col-lg-offset-4 col-lg-8\">\n            <div class=\"checkbox\">\n              <label>\n                ");
+  hashContexts = {'checkedBinding': depth0};
+  hashTypes = {'checkedBinding': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Checkbox", {hash:{
+    'checkedBinding': ("isShowingTotal")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" Show Portfolio Total\n              </label>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n      <h4>JSON Data</h4>\n      <div class=\"chart-json\">\n<pre>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "prettyPrintedData", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -51190,14 +51248,13 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push("<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"chart-header\">\n    <h2>Time Series Chart</h2>\n  </div>\n\n  <div class=\"example-container\">\n    <div class=\"chart-container\">\n      ");
-  hashContexts = {'barData': depth0,'lineData': depth0,'selectedInterval': depth0,'selectedSeedColor': depth0,'timeDelta': depth0,'barPadding': depth0,'barGroupPadding': depth0,'stackBars': depth0,'yAxisFromZero': depth0};
-  hashTypes = {'barData': "ID",'lineData': "ID",'selectedInterval': "ID",'selectedSeedColor': "ID",'timeDelta': "ID",'barPadding': "ID",'barGroupPadding': "ID",'stackBars': "ID",'yAxisFromZero': "ID"};
+  hashContexts = {'barData': depth0,'lineData': depth0,'selectedInterval': depth0,'selectedSeedColor': depth0,'barPadding': depth0,'barGroupPadding': depth0,'stackBars': depth0,'yAxisFromZero': depth0};
+  hashTypes = {'barData': "ID",'lineData': "ID",'selectedInterval': "ID",'selectedSeedColor': "ID",'barPadding': "ID",'barGroupPadding': "ID",'stackBars': "ID",'yAxisFromZero': "ID"};
   options = {hash:{
     'barData': ("barData"),
     'lineData': ("lineData"),
     'selectedInterval': ("selectedInterval"),
     'selectedSeedColor': ("selectedSeedColor"),
-    'timeDelta': ("timeDelta"),
     'barPadding': ("barPadding"),
     'barGroupPadding': ("barGroupPadding"),
     'stackBars': ("stackBars"),
@@ -51234,14 +51291,6 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
     'contentBinding': ("tickIntervals"),
     'valueBinding': ("selectedInterval"),
-    'class': ("form-control")
-  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Bar Interval</label>\n          <div class=\"col-lg-8\">\n            ");
-  hashContexts = {'contentBinding': depth0,'valueBinding': depth0,'class': depth0};
-  hashTypes = {'contentBinding': "STRING",'valueBinding': "STRING",'class': "STRING"};
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.Select", {hash:{
-    'contentBinding': ("dataIntervals"),
-    'valueBinding': ("timeDelta"),
     'class': ("form-control")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Bar Padding</label>\n          <div class=\"col-lg-8\">\n            ");
@@ -51298,14 +51347,15 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push("<div class=\"col-md-10 col-md-offset-2 left-border main-content-container\">\n  <div class=\"chart-header\">\n    <h2>Vertical Bar Chart</h2>\n  </div>\n\n  <div class=\"example-container\">\n    <div class=\"chart-container\">\n      ");
-  hashContexts = {'maxBarThickness': depth0,'selectedSeedColor': depth0,'data': depth0,'maxLabelHeight': depth0,'withinGroupPadding': depth0,'stackBars': depth0};
-  hashTypes = {'maxBarThickness': "ID",'selectedSeedColor': "ID",'data': "ID",'maxLabelHeight': "ID",'withinGroupPadding': "ID",'stackBars': "ID"};
+  hashContexts = {'maxBarThickness': depth0,'selectedSeedColor': depth0,'data': depth0,'maxLabelHeight': depth0,'withinGroupPadding': depth0,'betweenGroupPadding': depth0,'stackBars': depth0};
+  hashTypes = {'maxBarThickness': "ID",'selectedSeedColor': "ID",'data': "ID",'maxLabelHeight': "ID",'withinGroupPadding': "ID",'betweenGroupPadding': "ID",'stackBars': "ID"};
   options = {hash:{
     'maxBarThickness': ("maxBarThickness"),
     'selectedSeedColor': ("selectedSeedColor"),
     'data': ("data"),
     'maxLabelHeight': ("maxLabelHeight"),
     'withinGroupPadding': ("withinGroupPadding"),
+    'betweenGroupPadding': ("betweenGroupPadding"),
     'stackBars': ("stackBars")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['vertical-bar-chart'] || depth0['vertical-bar-chart']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "vertical-bar-chart", options))));
@@ -51325,7 +51375,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
     'valueBinding': ("selectedSeedColorName"),
     'class': ("form-control")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Rotated Label Heigh</label>\n          <div class=\"col-lg-8\">\n            ");
+  data.buffer.push("\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"col-lg-4 control-label\">Rotated Label Height</label>\n          <div class=\"col-lg-8\">\n            ");
   hashContexts = {'min': depth0,'max': depth0,'valueBinding': depth0};
   hashTypes = {'min': "STRING",'max': "STRING",'valueBinding': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ScrubberComponent", {hash:{
