@@ -51506,34 +51506,28 @@ function program9(depth0,data) {
 function program11(depth0,data) {
 
 
-  data.buffer.push("Dynamic bar cells");
+  data.buffer.push("Tree &amp; financial table");
   }
 
 function program13(depth0,data) {
 
 
-  data.buffer.push("Tree &amp; financial table");
+  data.buffer.push("Editable cells");
   }
 
 function program15(depth0,data) {
 
 
-  data.buffer.push("Editable cells");
+  data.buffer.push("Sparkline cells");
   }
 
 function program17(depth0,data) {
 
 
-  data.buffer.push("Sparkline cells");
-  }
-
-function program19(depth0,data) {
-
-
   data.buffer.push("Horizon cells");
   }
 
-function program21(depth0,data) {
+function program19(depth0,data) {
 
 
   data.buffer.push("Fluid table");
@@ -51573,36 +51567,30 @@ function program21(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.dynamic-bars", options) : helperMissing.call(depth0, "linkTo", "emberTable.dynamic-bars", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li>\n    <li>");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.financial", options) : helperMissing.call(depth0, "linkTo", "emberTable.financial", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n    <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.editable", options) : helperMissing.call(depth0, "linkTo", "emberTable.editable", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n    <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.sparkline", options) : helperMissing.call(depth0, "linkTo", "emberTable.sparkline", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n    <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.horizon", options) : helperMissing.call(depth0, "linkTo", "emberTable.horizon", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n    <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(21, program21, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.fluid", options) : helperMissing.call(depth0, "linkTo", "emberTable.fluid", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n  </ul>\n</div>\n");
@@ -51992,34 +51980,28 @@ function program5(depth0,data) {
 function program7(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Dynamic bar cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_dynamic_bars.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_financial.png\" />\n          </div>\n        ");
   }
 
 function program9(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_financial.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_editable.png\" />\n          </div>\n        ");
   }
 
 function program11(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_editable.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_sparkline.png\" />\n          </div>\n        ");
   }
 
 function program13(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_sparkline.png\" />\n          </div>\n        ");
-  }
-
-function program15(depth0,data) {
-
-
   data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Horizon cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_horizon.png\" />\n          </div>\n        ");
   }
 
-function program17(depth0,data) {
+function program15(depth0,data) {
 
 
   data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Fluid table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
@@ -52053,36 +52035,30 @@ function program17(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.dynamic-bars", options) : helperMissing.call(depth0, "linkTo", "emberTable.dynamic-bars", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n        ");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.financial", options) : helperMissing.call(depth0, "linkTo", "emberTable.financial", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.editable", options) : helperMissing.call(depth0, "linkTo", "emberTable.editable", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.sparkline", options) : helperMissing.call(depth0, "linkTo", "emberTable.sparkline", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.horizon", options) : helperMissing.call(depth0, "linkTo", "emberTable.horizon", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.fluid", options) : helperMissing.call(depth0, "linkTo", "emberTable.fluid", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-table/\">Clone it from Github</a> or <a href=\"https://github.com/Addepar/ember-table/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000/gh_pages</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/master\">master →</a></li>\n        <li>v0.0.1 - December 20, 2012. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/version-0.1\">version-0.1 →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-table <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-table repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-table.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");
@@ -52768,106 +52744,100 @@ function program9(depth0,data) {
 function program11(depth0,data) {
 
 
-  data.buffer.push("Dynamic bar cells");
+  data.buffer.push("Tree &amp; financial table");
   }
 
 function program13(depth0,data) {
 
 
-  data.buffer.push("Tree &amp; financial table");
+  data.buffer.push("Editable cells");
   }
 
 function program15(depth0,data) {
 
 
-  data.buffer.push("Editable cells");
+  data.buffer.push("Sparkline cells");
   }
 
 function program17(depth0,data) {
 
 
-  data.buffer.push("Sparkline cells");
+  data.buffer.push("Horizon cells");
   }
 
 function program19(depth0,data) {
 
 
-  data.buffer.push("Horizon cells");
+  data.buffer.push("Fluid table");
   }
 
 function program21(depth0,data) {
 
 
-  data.buffer.push("Fluid table");
+  data.buffer.push("Accordion");
   }
 
 function program23(depth0,data) {
 
 
-  data.buffer.push("Accordion");
+  data.buffer.push("Carousel");
   }
 
 function program25(depth0,data) {
 
 
-  data.buffer.push("Carousel");
+  data.buffer.push("Modal");
   }
 
 function program27(depth0,data) {
 
 
-  data.buffer.push("Modal");
+  data.buffer.push("Popover");
   }
 
 function program29(depth0,data) {
 
 
-  data.buffer.push("Popover");
+  data.buffer.push("Select");
   }
 
 function program31(depth0,data) {
 
 
-  data.buffer.push("Select");
+  data.buffer.push("Horizontal Bar");
   }
 
 function program33(depth0,data) {
 
 
-  data.buffer.push("Horizontal Bar");
+  data.buffer.push("Vertical Bar");
   }
 
 function program35(depth0,data) {
 
 
-  data.buffer.push("Vertical Bar");
+  data.buffer.push("Pie Chart");
   }
 
 function program37(depth0,data) {
 
 
-  data.buffer.push("Pie Chart");
+  data.buffer.push("Scatter Plot");
   }
 
 function program39(depth0,data) {
 
 
-  data.buffer.push("Scatter Plot");
+  data.buffer.push("Time Series");
   }
 
 function program41(depth0,data) {
 
 
-  data.buffer.push("Time Series");
-  }
-
-function program43(depth0,data) {
-
-
   data.buffer.push("Home");
   }
 
-function program45(depth0,data) {
+function program43(depth0,data) {
 
 
   data.buffer.push("License");
@@ -52907,36 +52877,30 @@ function program45(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.dynamic-bars", options) : helperMissing.call(depth0, "linkTo", "emberTable.dynamic-bars", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li>\n          <li>");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.financial", options) : helperMissing.call(depth0, "linkTo", "emberTable.financial", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.editable", options) : helperMissing.call(depth0, "linkTo", "emberTable.editable", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.sparkline", options) : helperMissing.call(depth0, "linkTo", "emberTable.sparkline", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.horizon", options) : helperMissing.call(depth0, "linkTo", "emberTable.horizon", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(21, program21, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.fluid", options) : helperMissing.call(depth0, "linkTo", "emberTable.fluid", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n        </ul>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-unstyled\">\n          <li><h6>Ember Widgets</h6></li>\n          <li>");
@@ -52954,31 +52918,31 @@ function program45(depth0,data) {
   data.buffer.push("</li>\n          <li class=\"bumper-30\">");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(23, program23, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(21, program21, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.accordion", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.accordion", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(25, program25, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(23, program23, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.carousel", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.carousel", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(27, program27, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(25, program25, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.modal", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.modal", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(29, program29, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(27, program27, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.popover", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.popover", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(31, program31, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(29, program29, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberWidgets.select", options) : helperMissing.call(depth0, "linkTo", "emberWidgets.select", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n        </ul>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-unstyled\">\n          <li><h6>Ember Charts</h6></li>\n          <li>");
@@ -52996,43 +52960,43 @@ function program45(depth0,data) {
   data.buffer.push("</li>\n          <li class=\"bumper-30\">");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(33, program33, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(31, program31, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberCharts.horizontal_bar", options) : helperMissing.call(depth0, "linkTo", "emberCharts.horizontal_bar", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(35, program35, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(33, program33, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberCharts.vertical_bar", options) : helperMissing.call(depth0, "linkTo", "emberCharts.vertical_bar", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(37, program37, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(35, program35, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberCharts.pie", options) : helperMissing.call(depth0, "linkTo", "emberCharts.pie", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(39, program39, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(37, program37, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberCharts.scatter", options) : helperMissing.call(depth0, "linkTo", "emberCharts.scatter", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(41, program41, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(39, program39, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberCharts.time_series", options) : helperMissing.call(depth0, "linkTo", "emberCharts.time_series", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n        </ul>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-unstyled\">\n          <li><h6>Open Source</h6></li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(43, program43, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(41, program41, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "linkTo", "index", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(45, program45, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(43, program43, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "license", options) : helperMissing.call(depth0, "linkTo", "license", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n          <li>\n            <address>\n              <br><br>\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/446ui\"><strong>Addepar HQ</strong><br>\n              1215 Terra Bella Ave<br>\n              Mountain View, CA 94043</a><br><br>\n\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/xEiCM\"><strong>Addepar NY</strong><br>\n              335 Madison Ave Suite 880<br>\n              New York, NY 10017</a><br>\n            </address>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 center-align\">\n        <p>&copy; 2013 Addepar, Inc.</p>\n      </div>\n    </div>\n  </div>\n</div>\n");
@@ -53072,13 +53036,13 @@ function program7(depth0,data) {
 function program9(depth0,data) {
 
 
-  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Widgets</h3>\n          <img src=\"/img/preview_widgets.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/addepar-components\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=addepar-components&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
+  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Widgets</h3>\n          <img src=\"/img/preview_widgets.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-widgets\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-widgets&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
   }
 
 function program11(depth0,data) {
 
 
-  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Charts</h3>\n          <img src=\"/img/preview_charts.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-charts\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember- charts&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
+  data.buffer.push("\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Charts</h3>\n          <img src=\"/img/preview_charts.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-charts\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-charts&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      ");
   }
 
   data.buffer.push("\n<div class=\"hero-container\">\n  <div class=\"hero index-hero\">\n    <div class=\"hero-overlay\"></div>\n  </div>\n  <div class=\"container hero-content-container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 hero-tagline center-align hidden-tablet\">\n        <h1 class=\"elevated\">Addepar Open Source</h1>\n        <p class=\"elevated index-buttons\">");
