@@ -51961,46 +51961,52 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Hello World Table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
+  data.buffer.push("Read more →");
   }
 
 function program3(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>AJAX cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_ajax.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Hello World Table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
   }
 
 function program5(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Bar cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_bars.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>AJAX cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_ajax.png\" />\n          </div>\n        ");
   }
 
 function program7(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_financial.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Bar cells</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_bars.png\" />\n          </div>\n        ");
   }
 
 function program9(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_editable.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Tree & financial table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_financial.png\" />\n          </div>\n        ");
   }
 
 function program11(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_sparkline.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Editable cell</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_editable.png\" />\n          </div>\n        ");
   }
 
 function program13(depth0,data) {
 
 
-  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Horizon cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_horizon.png\" />\n          </div>\n        ");
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Sparkline cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_sparkline.png\" />\n          </div>\n        ");
   }
 
 function program15(depth0,data) {
+
+
+  data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Horizon cell using D3.js</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_horizon.png\" />\n          </div>\n        ");
+  }
+
+function program17(depth0,data) {
 
 
   data.buffer.push("\n          <div class=\"col-md-4\">\n            <h4>Fluid table</h4>\n            <img class=\"preview-box\" src=\"/img/preview_table_simple.png\" />\n          </div>\n        ");
@@ -52012,52 +52018,58 @@ function program15(depth0,data) {
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.FinancialTableComponent", {hash:{
     'dataBinding': ("data")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n        </div>\n      </div>\n      <div class=\"example-description\">\n        <p class=\"reduced right-align\">Ember-Table with financial theme. Table with half a million rows. <a href=\"#\">Read more →</a></p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h3>Features</h3>\n      <ul class=\"styled\">\n        <li>Lazy rendering and support for millions of rows</li>\n        <li>Support for column resizing and reordering</li>\n        <li>Fully configurable, customizable, and extendable</li>\n      </ul>\n    </div>\n    <div class=\"col-md-6\">\n      <h3>Dependencies</h3>\n      <ul class=\"styled\">\n        <li><a target=\"_BLANK\" href=\"http://emberjs.com/\">Ember.js</a></li>\n        <li><a target=\"_BLANK\" href=\"http://jqueryui.com/\">jquery-ui</a></li>\n        <li><a target=\"_BLANK\" href=\"https://github.com/brandonaaron/jquery-mousewheel\">jquery.mousewheel.js</a></li>\n        <li><a target=\"_BLANK\" href=\"https://github.com/LearnBoost/antiscroll\">antiscroll.js</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <hr>\n      <h1>Examples</h1>\n      <p class=\"elevated\">The examples below demonstrate how you can extend and customize the table.</p>\n      <div class=\"row ember-table-examples\">\n        ");
+  data.buffer.push("\n        </div>\n      </div>\n      <div class=\"example-description\">\n        <p class=\"reduced right-align\">Ember-Table with financial theme. ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.financial", options) : helperMissing.call(depth0, "linkTo", "emberTable.financial", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("</p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h3>Features</h3>\n      <ul class=\"styled\">\n        <li>Lazy rendering and support for millions of rows</li>\n        <li>Support for column resizing and reordering</li>\n        <li>Fully configurable, customizable, and extendable</li>\n      </ul>\n    </div>\n    <div class=\"col-md-6\">\n      <h3>Dependencies</h3>\n      <ul class=\"styled\">\n        <li><a target=\"_BLANK\" href=\"http://emberjs.com/\">Ember.js</a></li>\n        <li><a target=\"_BLANK\" href=\"http://jqueryui.com/\">jquery-ui</a></li>\n        <li><a target=\"_BLANK\" href=\"https://github.com/brandonaaron/jquery-mousewheel\">jquery.mousewheel.js</a></li>\n        <li><a target=\"_BLANK\" href=\"https://github.com/LearnBoost/antiscroll\">antiscroll.js</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <hr>\n      <h1>Examples</h1>\n      <p class=\"elevated\">The examples below demonstrate how you can extend and customize the table.</p>\n      <div class=\"row ember-table-examples\">\n        ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.simple", options) : helperMissing.call(depth0, "linkTo", "emberTable.simple", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.ajax", options) : helperMissing.call(depth0, "linkTo", "emberTable.ajax", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.bars", options) : helperMissing.call(depth0, "linkTo", "emberTable.bars", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.financial", options) : helperMissing.call(depth0, "linkTo", "emberTable.financial", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.editable", options) : helperMissing.call(depth0, "linkTo", "emberTable.editable", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.sparkline", options) : helperMissing.call(depth0, "linkTo", "emberTable.sparkline", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.horizon", options) : helperMissing.call(depth0, "linkTo", "emberTable.horizon", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "emberTable.fluid", options) : helperMissing.call(depth0, "linkTo", "emberTable.fluid", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Getting Started</h1>\n      <p>You will need <a target=\"_BLANK\" href=\"http://nodejs.org/\">node</a> installed as a development dependency.</p>\n      <p><a href=\"https://github.com/Addepar/ember-table/\">Clone it from Github</a> or <a href=\"https://github.com/Addepar/ember-table/zipball/master\">download the ZIP repo<a><p>\n      <div class=\"highlight\">\n<pre><code>$ npm install -g grunt-cli\n$ npm install\n$ grunt\n$ node examples.js</code></pre>\n      <p>Go to your browser and navigate to localhost:8000/gh_pages</p>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Changelog</h1>\n      <ul class=\"styled\">\n        <li>v0.1 - October 21, 2013. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/master\">master →</a></li>\n        <li>v0.0.1 - December 20, 2012. Branch: <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/tree/version-0.1\">version-0.1 →</a></li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Contributing</h1>\n      <p>You can contribute to this project in one of two ways:\n      <ul class=\"styled\">\n        <li>Browse the ember-table <a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/issues?state=open\">issues</a> and report bugs</li>\n        <li>Clone the ember-table repo, make some changes according to our development guidelines and issue a pull-request with your changes.</li>\n      </ul>\n      <p>We keep the ember-table.js code to the minimum necessary, giving users as much control as possible.</p>\n    </div>\n    <div class=\"col-md-6\">\n      <hr>\n      <h1>Acknowledgements</h1>\n      <p><a target=\"_BLANK\" href=\"https://github.com/Addepar/ember-table/graphs/contributors\">List of Contributors on Github</a></p>\n      <p>With lots of help from the Ember.js team</p>\n      <p><a target=\"_BLANK\" href=\"https://twitter.com/ebryn\">ebryn</a>, <a target=\"_BLANK\" href=\"https://twitter.com/tomdale\">tomdale</a>, <a target=\"_BLANK\" href=\"https://twitter.com/wycats\">wycats</a></p>\n      <p>The original idea for lazy rendering was inspired by Erik Bryn.</p>\n    </div>\n  </div>\n</div>\n");

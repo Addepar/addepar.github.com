@@ -10172,6 +10172,7 @@ circle {
   -webkit-transition: linear 300ms opacity;
   -moz-transition: linear 300ms opacity;
   -o-transition: linear 300ms opacity;
+  -webkit-transform: translateZ(0);
 }
 .antiscroll-scrollbar-shown {
   opacity: 1;
