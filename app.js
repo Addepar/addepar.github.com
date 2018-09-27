@@ -1,12 +1,5 @@
 (function() {
 
-// Dependencies
-
-
-})();
-
-(function() {
-
 /**
 * bootstrap.js v3.0.0 by @fat and @mdo
 * Copyright 2013 Twitter Inc.
@@ -2016,16 +2009,12 @@ window.App = Ember.Application.create({
   LOG_TRANSITIONS: true
 });
 
-// Router
-
 
 })();
 
 (function() {
 
 
-// Router
-//###############################################################################
 App.Router.map(function() {
   this.route('license');
   return this.route('redirect', {
@@ -2036,8 +2025,6 @@ App.Router.map(function() {
 App.RedirectRoute = Ember.Route.extend({
   redirect: function(model) {
     var lib, matchedPath, newUrl, parts, re;
-    // Match all requested URLs that start with "ember-table", "ember-charts",
-    // or "ember-widgets", and grab the remainder of the URL
     re = /(ember-table|ember-charts|ember-widgets)(.*)/;
     parts = re.exec(model.matchedPath);
     if (!parts) {
@@ -2045,16 +2032,16 @@ App.RedirectRoute = Ember.Route.extend({
     }
     lib = parts[1];
     matchedPath = parts[2];
-    newUrl = `https://opensource.addepar.com/${lib}/#`;
+    newUrl = "http://opensource.addepar.com/" + lib + "/#";
     switch (lib) {
       case 'ember-table':
         newUrl += matchedPath;
         break;
       case 'ember-charts':
-        newUrl += `/ember-charts${matchedPath}`;
+        newUrl += "/ember-charts" + matchedPath;
         break;
       case 'ember-widgets':
-        newUrl += `/ember-widgets${matchedPath}`;
+        newUrl += "/ember-widgets" + matchedPath;
         break;
       default:
         newUrl = '#';
@@ -2068,28 +2055,109 @@ App.RedirectRoute = Ember.Route.extend({
 
 (function() {
 
-// Compiled Handlebars templates
+Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashTypes, hashContexts, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
+
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "navigation", options) : helperMissing.call(depth0, "partial", "navigation", options))));
+  data.buffer.push("\n\n");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n\n");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "footer", options) : helperMissing.call(depth0, "partial", "footer", options))));
+  data.buffer.push("\n");
+  return buffer;
+
+});
+
+Ember.TEMPLATES["footer"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+
+
+  data.buffer.push("Home");
+  }
+
+function program3(depth0,data) {
+
+
+  data.buffer.push("License");
+  }
+
+  data.buffer.push("<div class=\"footer\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-3\"></div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-unstyled\">\n          <li><h6>Addepar Open Source</h6></li>\n          <li>");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("</li>\n          <li>");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "license", options) : helperMissing.call(depth0, "link-to", "license", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("</li>\n        </ul>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-unstyled\">\n          <li><h6>About Addepar</h6></li>\n          <li><a target=\"_BLANK\" href=\"http://www.addepar.com\">www.addepar.com</a></li>\n          <li>\n            <address>\n              <br>\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/446ui\"><strong>Addepar HQ</strong><br>\n              1215 Terra Bella Ave<br>\n              Mountain View, CA 94043</a><br><br>\n\n              <a target=\"_BLANK\" href=\"http://goo.gl/maps/xEiCM\"><strong>Addepar NY</strong><br>\n              335 Madison Ave Suite 880<br>\n              New York, NY 10017</a><br>\n            </address>\n          </li>\n        </ul>\n      </div>\n      <div class=\"col-md-3\"></div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 center-align\">\n        <p>&copy; 2013 Addepar, Inc.</p>\n      </div>\n    </div>\n  </div>\n</div>\n");
+  return buffer;
+
+});
+
+Ember.TEMPLATES["index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '';
+
+
+  data.buffer.push("<div class=\"hero-container\">\n  <div class=\"hero index-hero\">\n    <div class=\"hero-overlay\"></div>\n  </div>\n  <div class=\"container hero-content-container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 hero-tagline center-align hidden-tablet\">\n        <h1 class=\"elevated\">Addepar Open Source</h1>\n\n        <p class=\"elevated index-buttons\">\n          <a class=\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\" href=\"http://opensource.addepar.com/ember-table\">Ember Table</a>\n          <a class=\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\" href=\"http://opensource.addepar.com/ember-charts\">Ember Charts</a>\n          <a class=\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\" href=\"http://opensource.addepar.com/ember-widgets\">Ember Widgets</a>\n        </p>\n      </div>\n    </div>\n  </div>\n</div>\n\n");
+  data.buffer.push("\n<div class=\"section product-preview\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-8 col-md-offset-2 center-align section-title\">\n        <h1>Addepar Open Source</h1>\n        <p class=\"elevated\">As a company built on open source, here are some of the internally-developed<br /> libraries we contribute back to the community.</p>\n        <p class=\"elevated\">If you’re interested in helping us build and contribute to these projects, <a target=\"_BLANK\" href=\"https://addepar.com/careers/\">we’re hiring!</a></p>\n      </div>\n    </div>\n\n    <div class=\"row open-source-previews\">\n      <a href=\"http://opensource.addepar.com/ember-table\">\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Table</h3>\n          <img src=\"/img/preview_table.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-table\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-table&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      </a>\n      <a href=\"http://opensource.addepar.com/ember-widgets\">\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Widgets</h3>\n          <img src=\"/img/preview_widgets.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-widgets\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-widgets&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      </a>\n      <a href=\"http://opensource.addepar.com/ember-charts\">\n        <div class=\"col-md-4 preview-box\">\n          <h3>Ember Charts</h3>\n          <img src=\"/img/preview_charts.png\" />\n          <p class=\"reduced center-align\">\n            <a target=\"_BLANK\" href=\"https://github.com/addepar/ember-charts\"><i class=\"icon-github\"></i> View on GitHub</a>\n            <iframe src=\"http://ghbtns.com/github-btn.html?user=addepar&amp;repo=ember-charts&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n          </p>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>\n");
+  return buffer;
+
+});
+
+Ember.TEMPLATES["license"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashTypes, hashContexts, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("\n");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "navigation", options) : helperMissing.call(depth0, "partial", "navigation", options))));
+  data.buffer.push("\n\n");
+  data.buffer.push("\n<div class=\"hero-container small-hero-container\">\n  <div class=\"hero index-hero\">\n    <div class=\"hero-overlay\"></div>\n  </div>\n</div>\n\n\n");
+  data.buffer.push("\n<div class=\"section section-grey\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-6 col-md-offset-3 section-title\">\n        <h1>Code &amp; Documentation Licensing</h1>\n      </div>\n      <div class=\"col-md-6 col-md-offset-3\">\n        <p>The majority of open source software exclusively developed by Addepar is licensed under the liberal terms of the Apache License, Version 2.0. The documentation is generally available under the Creative Commons Attribution 3.0 Unported License. In the end, you are free to use, modify and distribute any documentation, source code or examples within our open source projects as long as you adhere to the licensing conditions present within the projects.</p>\n        <p>Also note that our engineers like to hack on their own open source projects in their free time. For code provided by our engineers outside of our official repositories on GitHub, Addepar does not grant any type of license, whether express or implied, to such code.</p>\n     </div>\n    </div>\n  </div>\n</div>\n");
+  return buffer;
+
+});
+
+Ember.TEMPLATES["navigation"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '';
+
+
+  data.buffer.push("\n<nav class=\"navbar navbar-transparent addepar-navbar\" role=\"navigation\">\n  <div class=\"navbar-header\">\n    <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">\n      <span class=\"sr-only\">Toggle navigation</span>\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n    </button>\n    <a class=\"navbar-brand\" href=\"#\">\n      <img id=\"logo_dark\" class=\"logo\" src=\"img/addepar_logo_light.png\" /><span class=\"navbar-title\">Open Source</span>\n    </a>\n  </div>\n\n  <div class=\"collapse navbar-collapse navbar-ex1-collapse\">\n    <ul class=\"nav navbar-nav navbar-right\">\n\n      <li><a href=\"http://opensource.addepar.com/ember-table\">Ember Table</a></li>\n      <li><a href=\"http://opensource.addepar.com/ember-widgets\">Ember Widgets</a></li>\n      <li><a href=\"http://opensource.addepar.com/ember-charts\">Ember Charts</a></li>\n    </ul>\n  </div>\n</nav>\n");
+  return buffer;
+
+});
 
 })();
 
 (function() {
 
-Ember.TEMPLATES["application"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[12,\"navigation\",[]],[0,\"\\n\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\\n\"],[12,\"footer\",[]],[0,\"\\n\"]],\"hasEval\":true}","meta":{}});
-
-Ember.TEMPLATES["footer"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"footer\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-3\"],[7],[8],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-3\"],[7],[0,\"\\n        \"],[6,\"ul\"],[9,\"class\",\"list-unstyled\"],[7],[0,\"\\n          \"],[6,\"li\"],[7],[6,\"h6\"],[7],[0,\"Addepar Open Source\"],[8],[8],[0,\"\\n          \"],[6,\"li\"],[7],[4,\"link-to\",[\"index\"],null,{\"statements\":[[0,\"Home\"]],\"parameters\":[]},null],[8],[0,\"\\n          \"],[6,\"li\"],[7],[4,\"link-to\",[\"license\"],null,{\"statements\":[[0,\"License\"]],\"parameters\":[]},null],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-3\"],[7],[0,\"\\n        \"],[6,\"ul\"],[9,\"class\",\"list-unstyled\"],[7],[0,\"\\n          \"],[6,\"li\"],[7],[6,\"h6\"],[7],[0,\"About Addepar\"],[8],[8],[0,\"\\n          \"],[6,\"li\"],[7],[6,\"a\"],[9,\"rel\",\"noopener noreferrer\"],[9,\"target\",\"_blank\"],[9,\"href\",\"https://www.addepar.com\"],[7],[0,\"www.addepar.com\"],[8],[8],[0,\"\\n          \"],[6,\"li\"],[7],[0,\"\\n            \"],[6,\"address\"],[7],[0,\"\\n              \"],[6,\"br\"],[7],[8],[0,\"\\n              \"],[6,\"a\"],[9,\"rel\",\"noopener noreferrer\"],[9,\"target\",\"_blank\"],[9,\"href\",\"https://www.google.com/maps/dir//303+Bryant+Street+Mountain+View,+CA+94041\"],[7],[6,\"strong\"],[7],[0,\"Addepar MV\"],[8],[6,\"br\"],[7],[8],[0,\"\\n              303 Bryant Street\"],[6,\"br\"],[7],[8],[0,\"\\n              Mountain View, CA 94041\"],[8],[6,\"br\"],[7],[8],[6,\"br\"],[7],[8],[0,\"\\n\\n              \"],[6,\"a\"],[9,\"rel\",\"noopener noreferrer\"],[9,\"target\",\"_blank\"],[9,\"href\",\"https://www.google.com/maps/dir//335+Madison+Ave+%231430,+New+York,+NY+10017\"],[7],[6,\"strong\"],[7],[0,\"Addepar NY\"],[8],[6,\"br\"],[7],[8],[0,\"\\n              335 Madison Ave, Suite 1430\"],[6,\"br\"],[7],[8],[0,\"\\n              New York, NY 10017\"],[8],[6,\"br\"],[7],[8],[0,\"\\n            \"],[8],[0,\"\\n          \"],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-3\"],[7],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-12 center-align\"],[7],[0,\"\\n        \"],[6,\"p\"],[7],[0,\"© 2013 Addepar, Inc.\"],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"hasEval\":false}","meta":{}});
-
-Ember.TEMPLATES["index"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[6,\"div\"],[9,\"class\",\"hero-container\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"hero index-hero\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"hero-overlay\"],[7],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container hero-content-container\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-12 hero-tagline center-align hidden-tablet\"],[7],[0,\"\\n        \"],[6,\"h1\"],[9,\"class\",\"elevated\"],[7],[0,\"Addepar Open Source\"],[8],[0,\"\\n\\n        \"],[6,\"p\"],[9,\"class\",\"elevated index-buttons\"],[7],[0,\"\\n          \"],[6,\"a\"],[9,\"class\",\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\"],[9,\"href\",\"https://opensource.addepar.com/ember-table\"],[7],[0,\"Ember Table\"],[8],[0,\"\\n          \"],[6,\"a\"],[9,\"class\",\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\"],[9,\"href\",\"https://opensource.addepar.com/ember-charts\"],[7],[0,\"Ember Charts\"],[8],[0,\"\\n          \"],[6,\"a\"],[9,\"class\",\"addepar-btn addepar-btn-large addepar-btn-outline addepar-btn-white\"],[9,\"href\",\"https://opensource.addepar.com/ember-widgets\"],[7],[0,\"Ember Widgets\"],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"section product-preview\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-8 col-md-offset-2 center-align section-title\"],[7],[0,\"\\n        \"],[6,\"h1\"],[7],[0,\"Addepar Open Source\"],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"elevated\"],[7],[0,\"As a company built on open source, here are some of the internally-developed\"],[6,\"br\"],[7],[8],[0,\" libraries we contribute back to the community.\"],[8],[0,\"\\n        \"],[6,\"p\"],[9,\"class\",\"elevated\"],[7],[0,\"If you’re interested in helping us build and contribute to these projects, \"],[6,\"a\"],[9,\"target\",\"_BLANK\"],[9,\"href\",\"https://addepar.com/careers/\"],[7],[0,\"we’re hiring!\"],[8],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\\n    \"],[6,\"div\"],[9,\"class\",\"row open-source-previews\"],[7],[0,\"\\n      \"],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-table\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"col-md-4 preview-box\"],[7],[0,\"\\n          \"],[6,\"h3\"],[7],[0,\"Ember Table\"],[8],[0,\"\\n          \"],[6,\"img\"],[9,\"src\",\"/img/preview_table.png\"],[7],[8],[0,\"\\n          \"],[6,\"p\"],[9,\"class\",\"reduced center-align\"],[7],[0,\"\\n            \"],[6,\"a\"],[9,\"target\",\"_BLANK\"],[9,\"href\",\"https://github.com/addepar/ember-table\"],[7],[6,\"i\"],[9,\"class\",\"icon-github\"],[7],[8],[0,\" View on GitHub\"],[8],[0,\"\\n            \"],[6,\"iframe\"],[9,\"src\",\"https://ghbtns.com/github-btn.html?user=addepar&repo=ember-table&type=watch&count=true\"],[9,\"allowtransparency\",\"true\"],[9,\"frameborder\",\"0\"],[9,\"scrolling\",\"0\"],[9,\"width\",\"110\"],[9,\"height\",\"20\"],[7],[8],[0,\"\\n          \"],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-widgets\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"col-md-4 preview-box\"],[7],[0,\"\\n          \"],[6,\"h3\"],[7],[0,\"Ember Widgets\"],[8],[0,\"\\n          \"],[6,\"img\"],[9,\"src\",\"/img/preview_widgets.png\"],[7],[8],[0,\"\\n          \"],[6,\"p\"],[9,\"class\",\"reduced center-align\"],[7],[0,\"\\n            \"],[6,\"a\"],[9,\"target\",\"_BLANK\"],[9,\"href\",\"https://github.com/addepar/ember-widgets\"],[7],[6,\"i\"],[9,\"class\",\"icon-github\"],[7],[8],[0,\" View on GitHub\"],[8],[0,\"\\n            \"],[6,\"iframe\"],[9,\"src\",\"https://ghbtns.com/github-btn.html?user=addepar&repo=ember-widgets&type=watch&count=true\"],[9,\"allowtransparency\",\"true\"],[9,\"frameborder\",\"0\"],[9,\"scrolling\",\"0\"],[9,\"width\",\"110\"],[9,\"height\",\"20\"],[7],[8],[0,\"\\n          \"],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-charts\"],[7],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"col-md-4 preview-box\"],[7],[0,\"\\n          \"],[6,\"h3\"],[7],[0,\"Ember Charts\"],[8],[0,\"\\n          \"],[6,\"img\"],[9,\"src\",\"/img/preview_charts.png\"],[7],[8],[0,\"\\n          \"],[6,\"p\"],[9,\"class\",\"reduced center-align\"],[7],[0,\"\\n            \"],[6,\"a\"],[9,\"target\",\"_BLANK\"],[9,\"href\",\"https://github.com/addepar/ember-charts\"],[7],[6,\"i\"],[9,\"class\",\"icon-github\"],[7],[8],[0,\" View on GitHub\"],[8],[0,\"\\n            \"],[6,\"iframe\"],[9,\"src\",\"https://ghbtns.com/github-btn.html?user=addepar&repo=ember-charts&type=watch&count=true\"],[9,\"allowtransparency\",\"true\"],[9,\"frameborder\",\"0\"],[9,\"scrolling\",\"0\"],[9,\"width\",\"110\"],[9,\"height\",\"20\"],[7],[8],[0,\"\\n          \"],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"hasEval\":false}","meta":{}});
-
-Ember.TEMPLATES["license"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[12,\"navigation\",[]],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"hero-container small-hero-container\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"hero index-hero\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"hero-overlay\"],[7],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"section section-grey\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-6 col-md-offset-3 section-title\"],[7],[0,\"\\n        \"],[6,\"h1\"],[7],[0,\"Code & Documentation Licensing\"],[8],[0,\"\\n      \"],[8],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"col-md-6 col-md-offset-3\"],[7],[0,\"\\n        \"],[6,\"p\"],[7],[0,\"The majority of open source software exclusively developed by Addepar is licensed under the liberal terms of the Apache License, Version 2.0. The documentation is generally available under the Creative Commons Attribution 3.0 Unported License. In the end, you are free to use, modify and distribute any documentation, source code or examples within our open source projects as long as you adhere to the licensing conditions present within the projects.\"],[8],[0,\"\\n        \"],[6,\"p\"],[7],[0,\"Also note that our engineers like to hack on their own open source projects in their free time. For code provided by our engineers outside of our official repositories on GitHub, Addepar does not grant any type of license, whether express or implied, to such code.\"],[8],[0,\"\\n     \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"hasEval\":true}","meta":{}});
-
-Ember.TEMPLATES["navigation"] = Ember.HTMLBars.template({"id":null,"block":"{\"symbols\":[],\"statements\":[[6,\"nav\"],[9,\"class\",\"navbar navbar-transparent addepar-navbar\"],[9,\"role\",\"navigation\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"navbar-header\"],[7],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"navbar-toggle\"],[9,\"data-toggle\",\"collapse\"],[9,\"data-target\",\".navbar-ex1-collapse\"],[7],[0,\"\\n      \"],[6,\"span\"],[9,\"class\",\"sr-only\"],[7],[0,\"Toggle navigation\"],[8],[0,\"\\n      \"],[6,\"span\"],[9,\"class\",\"icon-bar\"],[7],[8],[0,\"\\n      \"],[6,\"span\"],[9,\"class\",\"icon-bar\"],[7],[8],[0,\"\\n      \"],[6,\"span\"],[9,\"class\",\"icon-bar\"],[7],[8],[0,\"\\n    \"],[8],[0,\"\\n    \"],[6,\"a\"],[9,\"class\",\"navbar-brand\"],[9,\"href\",\"#\"],[7],[0,\"\\n      \"],[6,\"img\"],[9,\"id\",\"logo_dark\"],[9,\"class\",\"logo\"],[9,\"src\",\"img/addepar_logo_light.png\"],[7],[8],[6,\"span\"],[9,\"class\",\"navbar-title\"],[7],[0,\"Open Source\"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\\n  \"],[6,\"div\"],[9,\"class\",\"collapse navbar-collapse navbar-ex1-collapse\"],[7],[0,\"\\n    \"],[6,\"ul\"],[9,\"class\",\"nav navbar-nav navbar-right\"],[7],[0,\"\\n\\n      \"],[6,\"li\"],[7],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-table\"],[7],[0,\"Ember Table\"],[8],[8],[0,\"\\n      \"],[6,\"li\"],[7],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-widgets\"],[7],[0,\"Ember Widgets\"],[8],[8],[0,\"\\n      \"],[6,\"li\"],[7],[6,\"a\"],[9,\"href\",\"https://opensource.addepar.com/ember-charts\"],[7],[0,\"Ember Charts\"],[8],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"]],\"hasEval\":false}","meta":{}});
-
-})();
-
-(function() {
-
-// set google code prettifier options
 window['PR_SHOULD_USE_CONTINUATION'] = false;
 
 
