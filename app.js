@@ -2024,29 +2024,30 @@ App.Router.map(function() {
 
 App.RedirectRoute = Ember.Route.extend({
   redirect: function(model) {
-    var lib, matchedPath, newUrl, parts, re;
-    re = /(ember-table|ember-charts|ember-widgets)(.*)/;
+    var lib, matchedPath, newPath, parts, re;
+    re = /(ember-table|ember-charts|ember-widgets)[\/]*(.*)/;
     parts = re.exec(model.matchedPath);
     if (!parts) {
       return;
     }
     lib = parts[1];
     matchedPath = parts[2];
-    newUrl = "https://opensource.addepar.com/" + lib + "/#";
+    newPath = "/#";
     switch (lib) {
       case 'ember-table':
-        newUrl += matchedPath;
+        if (matchedPath === "") {
+          newPath = "/" + lib + "/latest/";
+        } else {
+          newPath = "/" + lib + "/" + matchedPath;
+        }
         break;
       case 'ember-charts':
-        newUrl += "/ember-charts" + matchedPath;
+        newPath = "/" + lib + "/#/" + lib + "/" + matchedPath;
         break;
       case 'ember-widgets':
-        newUrl += "/ember-widgets" + matchedPath;
-        break;
-      default:
-        newUrl = '#';
+        newPath = "/" + lib + "/#/" + lib + "/" + matchedPath;
     }
-    return window.location.replace(newUrl);
+    return window.pathname.replace(newPath);
   }
 });
 
