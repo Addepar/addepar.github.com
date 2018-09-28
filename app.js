@@ -2025,7 +2025,7 @@ App.Router.map(function() {
 App.RedirectRoute = Ember.Route.extend({
   redirect: function(model) {
     var lib, matchedPath, newPath, parts, re;
-    re = /(ember-table|ember-charts|ember-widgets)(.*)/;
+    re = /(ember-table|ember-charts|ember-widgets)[\/]*(.*)/;
     parts = re.exec(model.matchedPath);
     if (!parts) {
       return;
@@ -2036,19 +2036,19 @@ App.RedirectRoute = Ember.Route.extend({
     switch (lib) {
       case 'ember-table':
         if (matchedPath === "") {
-          newPath += "latest/#";
+          newPath += "latest/";
         } else {
-          newPath += "" + matchedPath + "/";
+          newPath += "" + matchedPath;
         }
         break;
       case 'ember-charts':
-        newPath += "" + matchedPath + "/";
+        newPath += "" + matchedPath;
         break;
       case 'ember-widgets':
-        newPath += "" + matchedPath + "/";
+        newPath += "" + matchedPath;
         break;
       default:
-        newPath = '#';
+        newPath = '/#';
     }
     return window.pathname.replace(newPath);
   }
