@@ -1,24 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Addepar | Open Source</title>
-  <link rel="shortcut icon" href="/img/favicon.ico">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- Load Fonts from Fonts.com -->
-  <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/cc61a2f8-3c32-45ef-9be7-fc0cc1fab22b.css"/>
+    <title>Open Source at Addepar</title>
 
-  <!-- Load assets -->
-  <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.svg">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width initial-scale=1">
 
-  <!-- javascript -->
-  <script defer src="/lib/jquery-1.9.1.js"></script>
-  <script defer src="/lib/jquery-ui-1.10.1.custom.min.js"></script>
-  <script defer src="/lib/handlebars.js"></script>
-  <script defer src="/lib/ember.js"></script>
-  <script defer src="/app.js"></script>
-</body>
+    <style type="text/css">
+      @font-face {
+        font-family: 'Univers-Next';
+        src: url('/fonts/report-UniversNextW01Regular.woff') format('woff'),
+          url('/fonts/report-UniversNextW01Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+      html {
+        height: 100%;
+      }
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'Univers-Next';
+        line-height: 1.4;
+        color: #333;
+      }
+      body {
+        padding: 64px 0 128px;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        flex: 1 1 auto;
+        min-width: 280px;
+        max-width: 510px;
+        height: 100%;
+        padding: 0 16px 0;
+      }
+      .main {
+        background: #ffffff;
+        padding: 32px;
+      }
+      h1 {
+        text-align: center;
+        font-weight: normal;
+      }
+      p {
+        margin-top: 0;
+      }
+      p.highlight {
+        background: #faede3;
+        padding: 0.5rem;
+        border: 1px solid #c7bcb2;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      li {
+        margin-bottom: 3px;
+      }
+      .addepar-logo {
+        width: 100%;
+        height: 150px;
+        padding: 32px 0 32px;
+        box-sizing: border-box;
+        text-align: center;
+        margin-left: -10px;
+      }
+      a {
+        color: #0F5078;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main" role="main">
+        <img class="addepar-logo" src="/img/Addepar-Logo-Stacked-Blk.svg" alt="Addepar logo"/>
+
+        <h1>Open Source at Addepar</h1>
+
+        <p class="highlight">
+          Interested in working at Addepar?
+          <a href="https://addepar.com/careers">addepar.com/careers</a>.
+        </p>
+
+        <p>
+          Addepar maintains several active OSS projects &amp; repos:
+        </p>
+
+        <ul>
+          <li><a href="https://opensource.addepar.com/ember-table/">Ember Table</a></li>
+          <li><a href="https://github.com/Addepar/ember-json-viewer">ember-json-viewer</a></li>
+          <li><a href="https://github.com/Addepar/github-metrics">github-metrics</a></li>
+          <li><a href="https://github.com/Addepar/ember-classy-page-object">ember-classy-page-object</a></li>
+        </ul>
+
+        <p>
+          Generally, you can find our work <a href="https://github.com/Addepar/">on GitHub</a>.
+        </p>
+
+        <p>
+          Addepar is a formal participant in OSS communities, especially
+          in the Ember.js (<a href="https://emberjs.com/teams/">framework and steering commitees</a>) and Java
+          (<a href="https://jcp.org/en/home/index">JCP</a> member) ecosystems.
+        </p>
+
+        <p>
+          <a href="https://addepar.com/">addepar.com</a> |
+          © 2023 Addepar, Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+  </body>
 </html>

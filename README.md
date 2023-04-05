@@ -1,7 +1,15 @@
-A landing page for [Addepar's open source](http://addepar.github.io/) projects.
+The repo defines the landing page at
+[opensource.addepar.com](https://opensource.addepar.com/).
 
-Each project now hosts its own documentation and demo pages; this repository is
-just a jumping-off point. The Addepar open source libraries are currently:
-- [Ember Table](https://github.com/Addepar/ember-table)
-- [Ember Charts](https://github.com/Addepar/ember-charts)
-- [Ember Widgets](https://github.com/Addepar/ember-widgets)
+Projects may host additional pre-repo content. For example:
+
+- [Ember Table](https://opensource.addepar.com/ember-table)
+
+
+## Development
+
+Boot a Python server to host the static assets for this page:
+
+```sh
+python3 -m http.server 9000
+```
